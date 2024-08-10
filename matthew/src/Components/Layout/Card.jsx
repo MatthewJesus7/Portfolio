@@ -2,12 +2,12 @@ function Card({ type, proof, title, text, children, href, backgroundImage, pictu
     return(
         <a href={href} target="_blank" rel="external">
 
-            <div className={`flex ${type} md:flex-row mb-12 justify-between -m-5 p-5 rounded-lg
+            <div className={`flex ${type} md:flex-row -m-5  mb-12 p-5 justify-between rounded-lg
             transition-all hover:bg-gray-200`}>
 
                 <div className={ `shrink-0 mb-3 ${picture}`}
 
-                style={{ backgroundImage: backgroundImage, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
+                style={{ backgroundImage: backgroundImage, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', }}
                 >
                     {proof}
                 </div>
@@ -19,7 +19,8 @@ function Card({ type, proof, title, text, children, href, backgroundImage, pictu
                     <p>
                         {text}
                     </p>
-                    <div className="flex">
+
+                    <div className="flex flex-wrap">
                         {children}
                     </div>
                 </div>

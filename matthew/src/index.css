@@ -8,7 +8,7 @@
 
 .true {
     @apply w-64;
-    @apply h-40;
+    @apply h-32;
     @apply mt-3;
     @apply mr-3;
     @apply shadow-md;
@@ -28,4 +28,5 @@ h2 {
 
 p {
     @apply text-gray-700;
+    @apply text-lg;
 }
