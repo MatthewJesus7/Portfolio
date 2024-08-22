@@ -9,11 +9,11 @@ function MainProjects() {
         <h2>Principais Projetos</h2>
 
         <Card
-        href="https://commercetech-ef2al5zq4-matheus-projects-30717bca.vercel.app/"
+        href="https://commercetech-matheus-projects-30717bca.vercel.app/"
         type="picture"
         // proof=""
         picture="true"
-        backgroundImage="url('https://matthew.vercel.app/imagens/CommerceTech.png')"
+        backgroundImage="url('/imagens/CommerceTech.png')"
         title="CommerceTech"
         text={`Desenvolvi o CommerceTech como uma demonstração das minhas habilidades e uma fonte de renda extra, com o objetivo de lançar um projeto completo e funcional. Enfrentei desafios durante o lançamento, mas aprendi que "feito é melhor que perfeito". O uso de React, Tailwind, e GitHub tornou o projeto robusto e eficiente, e essa experiência acelerou meu desenvolvimento como desenvolvedor.`}
         >
