@@ -9,8 +9,11 @@ function App() {
     <div className="App bg-gray-50 selection:text-gray-500 overflow-x-hidden">
 
       <Main></Main>
-      <Experience></Experience>
+
       <MainProjects></MainProjects>
+      
+      <Experience></Experience>
+      
       <Footer></Footer>
 
     </div>

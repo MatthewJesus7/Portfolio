@@ -3,7 +3,8 @@ function Card({ type, proof, title, text, children, href, backgroundImage, pictu
         <a href={href} target="_blank" rel="external">
 
             <div className={`flex ${type} md:flex-row -m-5  mb-12 p-5 justify-between rounded-lg
-            transition-all hover:bg-gray-200`}>
+            transition-all hover:bg-gray-200
+            `}>
 
                 <div className={ `shrink-0 mb-3 ${picture}`}
 
@@ -12,7 +13,7 @@ function Card({ type, proof, title, text, children, href, backgroundImage, pictu
                     {proof}
                 </div>
 
-                <div className="w-[80%] ">
+                <div className="md:w-[80%] w-full">
                     <h2 className="-my-1 mb-3">
                         {title}
                     </h2>

@@ -21,6 +21,7 @@ function Me() {
             <span> React, Tailwind </span>
             <span> git, github </span>
             <span> Web Design </span>
+            <span> Python </span>
             </p>
 
             {/* <nav className="pt-6">
@@ -32,27 +33,35 @@ function Me() {
             </nav> */}
 
             <ul className="flex justify-between w-72 my-6">
-            <Icon
-            href="https://github.com/MatthewJesus7"
-            >
-                <FaGithub />
-            </Icon>
+            <li>
+                <Icon
+                href="https://github.com/MatthewJesus7"
+                >
+                    <FaGithub />
+                </Icon>
+            </li>
 
-            <Icon
-            href="https://www.linkedin.com/in/matheus-costa-b01372205/"
-            >
-                <FaLinkedin />
-            </Icon>
+            <li>
+                <Icon
+                href="https://www.linkedin.com/in/matheus-costa-b01372205/"
+                >
+                    <FaLinkedin />
+                </Icon>
+            </li>
 
-            <Icon
-            href="https://www.instagram.com/mattheus1590/"
-            >
-                <FaInstagram />
-            </Icon>
+            <li>
+                <Icon
+                href="https://www.instagram.com/mattheus1590/"
+                >
+                    <FaInstagram />
+                </Icon>
+            </li>
 
-            <Icon>
-                <IoDocumentTextOutline />
-            </Icon>
+            <li>
+                <Icon>
+                    <IoDocumentTextOutline />
+                </Icon>
+            </li>
             </ul>
         </Section>
     </>
