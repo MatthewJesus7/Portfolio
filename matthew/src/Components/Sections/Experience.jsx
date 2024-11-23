@@ -6,7 +6,7 @@ function Experience() {
 
     return(
         <>
-        <Section customclass="xl:ml-[40%] xl:w-[60%]">
+        <Section customclass="xl:ml-[40%] xl:w-[60%] relative z-10">
 
             <h2>Experiência</h2>
 

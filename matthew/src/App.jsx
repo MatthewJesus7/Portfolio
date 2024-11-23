@@ -1,20 +1,20 @@
 import Main from "./Components/Sections/Main";
 import Experience from "./Components/Sections/Experience";
 import MainProjects from "./Components/Sections/MainProjects";
-import Footer from "./Components/Sections/Footer";
+import Layout from "./Components/Layout/Layout";
 
 
 function App() {
   return (
-    <div className="App bg-gray-50 selection:text-gray-500 overflow-x-hidden font-['roboto']">
+    <div className="App relative
+    bg-gray-50 selection:text-gray-500 overflow-hidden font-['roboto']">
 
-      <Main></Main>
-
-      <MainProjects></MainProjects>
-      
-      <Experience></Experience>
-      
-      <Footer></Footer>
+      <Layout>
+        <Main></Main>
+        <MainProjects></MainProjects>
+        
+        <Experience></Experience>
+      </Layout>
 
     </div>
   );
