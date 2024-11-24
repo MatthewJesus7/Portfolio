@@ -1,41 +1,38 @@
 import React, { useState } from "react";
-import Button from "./Button";
+import NavButton from "../../Items/Buttons/NavButton";
+import { NavLink } from "react-router-dom";
+import { FiMenu, FiX, FiArrowLeft } from "react-icons/fi";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex">
-      {/* Botão importado */}
-      <Button onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "Fechar" : "Abrir"} Menu
-      </Button>
+    <div className={`flex h-full
+    fixed right-0 z-20
+    ${isOpen ? "translate-x-0" : "translate-x-64"}
+    transform z-20
+    transition-transform duration-300 ease-in-out`}>
+      
+      <NavButton 
+      onClick={() => setIsOpen(!isOpen)}
+      >
+      {isOpen ? <FiX/> : <FiMenu/>}
+      </NavButton>
 
       <div
-        className={`fixed top-0 left-0 h-full bg-gray-800 text-white w-64 transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out`}
+        className={`h-full backdrop-blur-md bg-gray-300/70 w-64 max-w-1/2`}
       >
-        <h2 className="text-xl font-bold p-4">Menu Lateral</h2>
-        <ul className="space-y-2 p-4">
-          <li className="hover:bg-gray-700 p-2 rounded-md">
-            <a href="#">Home</a>
-          </li>
-          <li className="hover:bg-gray-700 p-2 rounded-md">
-            <a href="#">Sobre</a>
-          </li>
-          <li className="hover:bg-gray-700 p-2 rounded-md">
-            <a href="#">Serviços</a>
-          </li>
-          <li className="hover:bg-gray-700 p-2 rounded-md">
-            <a href="#">Contato</a>
+        <h2 className="text-xl font-bold p-4">
+          Menu
+        </h2>
+
+        <ul className="space-y-2">
+          <li className="hover:bg-gray-400/30 py-2">
+            <NavLink to="/Progress" 
+            className="pr-44 pl-6 py-2">Progresso</NavLink>
           </li>
         </ul>
-      </div>
 
-      <div className="flex-1 p-4 ml-64">
-        <h1 className="text-2xl font-bold">Conteúdo Principal</h1>
-        <p>Aqui fica o conteúdo principal da página.</p>
       </div>
     </div>
   );

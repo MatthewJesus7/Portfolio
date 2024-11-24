@@ -8,14 +8,9 @@ function App() {
   return (
     <div className="App relative
     bg-gray-50 selection:text-gray-500 overflow-hidden font-['roboto']">
-
-      <Layout>
-        <Main></Main>
+        {/* <Main></Main>
         <MainProjects></MainProjects>
-        
-        <Experience></Experience>
-      </Layout>
-
+        <Experience></Experience> */}
     </div>
   );
 }

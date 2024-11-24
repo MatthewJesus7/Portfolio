@@ -1,7 +1,12 @@
-const NavButton = ({ onClick, children }) => {
+const NavButton = ({ onClick, children, customclass }) => {
     return (
       <button
-        className="p-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-200 ease-in-out"
+        className={`
+          flex justify-center items-center
+          m-2 p-2 size-12 text-2xl text-black rounded-md
+          backdrop-blur-md hover:bg-gray-300/40 
+          transition duration-200 ease-in-out 
+          ${customclass}`}
         onClick={onClick}
       >
         {children}

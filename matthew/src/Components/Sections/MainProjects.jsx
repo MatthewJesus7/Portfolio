@@ -17,7 +17,7 @@ function MainProjects() {
         title="CommerceTech"
         text={`Desenvolvi o CommerceTech como uma demonstração das minhas habilidades e uma fonte de renda extra, com o objetivo de lançar um projeto completo e funcional. Enfrentei desafios durante o lançamento, mas aprendi que "feito é melhor que perfeito". O uso de React, Tailwind, e GitHub tornou o projeto robusto e eficiente, e essa experiência acelerou meu desenvolvimento como desenvolvedor.`}
         >
-            <Dot>HTML</Dot> <Dot>CSS</Dot> <Dot>JavaScript</Dot> <Dot>GitHub</Dot> <Dot>React</Dot> <Dot>JSX</Dot> <Dot>UseState</Dot> <Dot>React-Router-DOM</Dot> <Dot>WebDesign</Dot>
+            <Dot>React.js</Dot>  <Dot>Firebase</Dot> <Dot>Git & GitHub</Dot> <Dot>JavaScript</Dot> <Dot>Web Design</Dot>
         </Card>
 
         <Card
