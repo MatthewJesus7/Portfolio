@@ -1,18 +1,33 @@
-import { NavLink } from "react-router-dom";
 import BackButton from "../Items/Buttons/BackButton";
 import Section from "../Layout/Section";
 import Card from "../Layout/Card";
 import Dot from "../Items/Dot";
 import Tag from "../Items/Tag";
+import Menu from "../Layout/Menu"
+
+import { useState, useRef } from "react";
 
 const Progress = () => {
+
+    const menuRef = useRef();
+    const handleToggleMenu = () => {
+        menuRef.current.toggleMenu();
+    };
+
+    const [popUp, setPopUp] = useState(false);
+
+    const ShowPopUp = () => {
+        handleToggleMenu();
+    }
+
     return(
         <div>
+            <Menu ref={menuRef}></Menu>
+            <button onClick={handleToggleMenu}></button>
             <BackButton></BackButton>
             <Section customclass="relative z-10">
                 <h2>HTML5 e CSS3</h2>
-                <h3>Curso de HTML e CSS do gustavo Guanabara</h3>
-                <h4 className="my-5">Módulo 1</h4>
+                <h3 className="mb-7">Curso de HTML e CSS do gustavo Guanabara</h3>
 
             <Card
                 href="https://matthewjesus7.github.io/html-css/Exercicios/ex001/index.html"
@@ -203,11 +218,139 @@ const Progress = () => {
                 picture="true"
                 backgroundImage="url('')"
                 title="Aula 14 — videos em HTML5"
-                text={`.`}
+                text={`Videos, e suas formas mais leves, conversor de video, e recomendação de incorporação.`}
                 >
-                    <Dot><Tag>picture</Tag></Dot>
+                    <Dot><Tag>video</Tag></Dot>
                     <Dot><Tag>source</Tag></Dot>
+                    <Dot><Tag>incorporação</Tag></Dot>
                 </Card>
+
+                <Card
+                href="https://matthewjesus7.github.io/html-css/Exercicios/ex015/index.html"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title="Aula 15 — CSS"
+                text={`Apenas uma Demo que seria copiada e colada posteriormente com CSS`}
+                >
+                    <Dot>Introdução ao CSS</Dot>
+                </Card>
+
+                <Card
+                href="https://matthewjesus7.github.io/html-css/Exercicios/ex15.2/index.html"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title="Aula 15.2 — Estilização externa com CSS"
+                text={`Aprendendo a diferença com estilos inline, local, e externo, e quando se utilizar cada um.`}
+                >
+                    <Dot>Estilos inline</Dot>
+                    <Dot>Estilos locais</Dot>
+                    <Dot>Estilos externos</Dot>
+                </Card>
+
+                <Card
+                href="https://matthewjesus7.github.io/html-css/Exercicios/ex016/cor03.html"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title={`Aula 16 — "site" exemplo`}
+                text={`Junção de tudo que eu sabia até ali com HTML e CSS`}
+                >
+                    <Dot>CSS</Dot>
+                    <Dot>Hierarquia</Dot>
+                    <Dot>Cores</Dot>
+                    <Dot>hover</Dot>
+                    <Dot>Gradiente</Dot>
+                </Card>
+
+                <Card
+                href="https://matthewjesus7.github.io/html-css/Exercicios/ex017/fonte01.html"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title={`Aula 17 — Trabalhando com fontes`}
+                text={`Tamanhos de fonte com CSS`}
+                >
+                    <Dot>CSS</Dot>
+                    <Dot>font-size</Dot>
+                </Card>
+
+                <Card
+                href="https://matthewjesus7.github.io/html-css/Exercicios/ex018/fonte01.html"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title={`Aula 18 — Fontes Google e Externas`}
+                text={`Aprendendo a Importar, e usar fontes Google e Externas`}
+                >
+                    <Dot>Google fonts</Dot>
+                    <Dot>fontes externas</Dot>
+                </Card>
+
+                <Card
+                href="https://matthewjesus7.github.io/html-css/Exercicios/ex018/fonte01.html"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title={`Aula 18 — Fontes Google e Externas`}
+                text={`Aprendendo a Importar, e usar fontes Google e Externas`}
+                >
+                    <Dot>Google fonts</Dot>
+                    <Dot>fontes externas</Dot>
+                </Card>
+
+                <Card
+                href="https://matthewjesus7.github.io/html-css/Exercicios/ex019/seletor01.html"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title={`Aula 19 — Seletores`}
+                text={`Aprendendo a selecionar um elemento HTML especifico.`}
+                >
+                    <Dot>id</Dot>
+                    <Dot>selecionar item com css</Dot>
+                </Card>
+
+                <Card
+                href="https://matthewjesus7.github.io/html-css/Exercicios/ex020/pseudoclasse.html"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title={`Aula 20 — Pseudo-classes`}
+                text={`Aprendendo sobre pseudo-classes e suas possibilidades!`}
+                >
+                    <Dot>class</Dot>
+                    <Dot>hover:</Dot>
+                    <Dot>after::</Dot>
+                    <Dot>active:</Dot>
+                </Card>
+
+                <Card
+                onClick={ShowPopUp}
+                href="#"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title={`Aula 21 — Caixas`}
+                text={`Itens de caixa, hierarquia de caixas, itens inline.`}
+                >
+                    <Dot>Caixas</Dot>
+                    <Dot>Inline</Dot>
+                    <Dot>Camadas de uma box</Dot>
+                    <Dot>estilização</Dot>
+                </Card>
+
+
 
                 <h3>Meus Proprios "projetos"</h3>
                 
