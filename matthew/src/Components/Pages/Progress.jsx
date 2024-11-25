@@ -11,18 +11,16 @@ import { useState, useRef } from "react";
 const Progress = () => {
     const popUpRef = useRef();
 
-    const ShowPopUp = (event) => {
+    const ShowPopUp = ( event) => {
         event.preventDefault();
         if (popUpRef.current) {
-            popUpRef.current.handleOpenMenu();
+            popUpRef.current.handleOpenMenu(event);
             console.log("showPopUp Ativo")
         }
     };
 
     return(
         <div>
-            <button onClick={ShowPopUp}>tste</button>
-            <PopUp/>
             <BackButton></BackButton>
             <Section customclass="relative z-10">
                 <h2>HTML5 e CSS3</h2>
@@ -347,9 +345,14 @@ const Progress = () => {
                     <Dot>Inline</Dot>
                     <Dot>Camadas de uma box</Dot>
                     <Dot>estilização</Dot>
+                    
                 </Card>
+                
+                <PopUp 
+                height="h-[120px]"
+                ref={popUpRef}>
 
-
+                </PopUp>
 
                 <h3>Meus Proprios "projetos"</h3>
                 
