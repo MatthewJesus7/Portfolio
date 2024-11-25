@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from "react";
 
-const Menu = forwardRef(({ children }, ref) => {
+const Menu = forwardRef(({ children, customclass, style,
+    OpenMenuAnimating, OpenMenuEndAnimating, CloseMenuAnimating, CloseMenuEndAnimating }, ref) => {
 
     const [isAnimating, setIsAnimating] = useState(false);
     const [aparecerMenu, setAparecerMenu] = useState(false);
@@ -11,18 +12,15 @@ const Menu = forwardRef(({ children }, ref) => {
         setIsAnimating(true);
 
         setTimeout(() => {
+            
+            setAparecerMenu(true);
             setIsAnimating(false);
-            setAparecerMenu(false);
-
-            setTimeout(() => {
-                setAparecerMenu(true);
-                setIsAnimating(true);
-            }, 500);
 
         }, 500);
     }
 
     const closeMenu = () => {
+        console.log('Menu (teoricamente) fechado.')
         setIsAnimating(true);
         setTimeout(() => {
             setIsAnimating(false);
@@ -32,22 +30,21 @@ const Menu = forwardRef(({ children }, ref) => {
 
     const toggleMenu = () => {
             if (aparecerMenu) {
-                openMenu();
-            } else {
                 closeMenu();
+            } else {
+                openMenu();
             };
-        };
+    };
 
 
     useImperativeHandle(ref, () => ({
         toggleMenu,
+        openMenu,
     }));
 
     const handleClickOutside = (event) => {
 
-    if (
-        menuRef.current && !menuRef.current.contains(event.target)
-      ) {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
         closeMenu();
       }
     };
@@ -59,26 +56,28 @@ const Menu = forwardRef(({ children }, ref) => {
       return () => {
         document.removeEventListener('mousedown', handleClickOutside);
       };
-    }, []);
+    }, [aparecerMenu]);
     
     return(
         <div className={`overflow-x-hidden ${aparecerMenu ? 'blur-background' : ''} `}>
 
         <div className={`overflow-x-hidden`}>
 
-            <button onClick={openMenu}>botao</button>
-
             <div
+                onMouseLeave={closeMenu}
                 ref={menuRef}
-                customclass={`transform transition-all absolute duration-1000 ${
+                style={style}
+                className={`absolute ${customclass}
+                    ${
                     aparecerMenu
                         ? isAnimating
-                            ? 'translate-y-0 glass h-full sm:h-[500px]'
-                            : 'translate-y-0 h-[500px]'
+                            ? OpenMenuAnimating
+                            : OpenMenuEndAnimating
                         : isAnimating
-                        ? 'border-none -translate-y-1 h-0'
-                        : '-translate-y-1 glass h-0 border-none'
-                }`}
+                        ? CloseMenuAnimating
+                        : CloseMenuEndAnimating
+                    }
+                    `}
             >
                 {children}
             </div>

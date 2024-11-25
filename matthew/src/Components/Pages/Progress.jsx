@@ -3,27 +3,26 @@ import Section from "../Layout/Section";
 import Card from "../Layout/Card";
 import Dot from "../Items/Dot";
 import Tag from "../Items/Tag";
-import Menu from "../Layout/Menu"
+
+import PopUp from "../Items/popup/PopUp";
 
 import { useState, useRef } from "react";
 
 const Progress = () => {
+    const popUpRef = useRef();
 
-    const menuRef = useRef();
-    const handleToggleMenu = () => {
-        menuRef.current.toggleMenu();
+    const ShowPopUp = (event) => {
+        event.preventDefault();
+        if (popUpRef.current) {
+            popUpRef.current.handleOpenMenu();
+            console.log("showPopUp Ativo")
+        }
     };
-
-    const [popUp, setPopUp] = useState(false);
-
-    const ShowPopUp = () => {
-        handleToggleMenu();
-    }
 
     return(
         <div>
-            <Menu ref={menuRef}></Menu>
-            <button onClick={handleToggleMenu}></button>
+            <button onClick={ShowPopUp}>tste</button>
+            <PopUp/>
             <BackButton></BackButton>
             <Section customclass="relative z-10">
                 <h2>HTML5 e CSS3</h2>

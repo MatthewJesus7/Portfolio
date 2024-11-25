@@ -30,3 +30,7 @@ p {
     @apply text-gray-700;
     @apply text-lg;
 }
+
+.rounded-md-top {
+    @apply rounded-tl-md rounded-tr-md;
+}
