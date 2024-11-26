@@ -58,7 +58,7 @@ const PopUp = forwardRef(({ height, name, items }, ref) => {
       {filteredItems.length > 0 ? (
         <ul>
           {filteredItems.map((item, idx) => (
-            <PopUpItem key={idx} text={item.text} />
+            <PopUpItem key={idx} text={item.text} href={item.href} />
           ))}
         </ul>
       ) : (
