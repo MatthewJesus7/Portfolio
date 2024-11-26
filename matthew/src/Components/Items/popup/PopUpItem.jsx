@@ -1,7 +1,12 @@
-const PopUpItem = ({text}) => {
+const PopUpItem = ({text, href}) => {
     return(
-        <li className="list-none h-10 w-full border-2 border-gray-600 bg-gray-400 rounded-md-top flex  items-center px-2">
-            <p className="text-black">{text}</p>
+        <li 
+        className="
+        popup-item list-none h-10 w-full mb-1px border-b border-gray-400  transition-transform ease-in duration-400 hover:cursor-pointer hover:shadow-md hover:rounded-md hover:bg-gray-50/50"
+        >
+            <a href={href} className="size-full px-2 flex items-center">
+                <p className="text-black">{text}</p>
+            </a>
         </li>
     );
 };

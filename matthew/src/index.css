@@ -31,6 +31,23 @@ p {
     @apply text-lg;
 }
 
-.rounded-md-top {
-    @apply rounded-tl-md rounded-tr-md;
+div:has(.card:hover) .card:not(:hover) {
+    filter: blur(1px);
+    opacity: 0.5;
+    transform: scale(0.99);
+    transition: all 0.3s ease;
 }
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+ul:has(.popup-item:hover) .popup-item:not(:hover) {
+    filter: blur(1px);
+    opacity: 0.5;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+  }
+  
+  
+  

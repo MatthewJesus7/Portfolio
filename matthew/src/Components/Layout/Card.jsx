@@ -5,7 +5,7 @@ function Card({ type, proof, title, text, children, href, backgroundImage, pictu
     return(
         <a href={href} target="_blank" rel="noreferrer">
 
-            <div className={`flex ${type} md:flex-row -m-5  mb-12 p-5 justify-between rounded-lg
+            <div className={`card flex ${type} md:flex-row -m-5  mb-12 p-5 justify-between rounded-lg
             transition-all hover:bg-gray-300/40 hover:backdrop-blur-md
             `}
             onClick={onClick}

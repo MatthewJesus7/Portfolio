@@ -8,16 +8,33 @@ import PopUp from "../Items/popup/PopUp";
 
 import { useState, useRef } from "react";
 
+const groupedItems = [
+    { name:"caixas",
+        items: [
+        { text: "caixa1", href: "" }, 
+        { text: "caixa2", href: "" },
+        { text: "caixa3", href: "" }
+    ]},
+
+    { name: "group2", items: [{ text: "item3" }, { text: "item4" }] },
+    { name: "group3", items: [{ text: "item5" }, { text: "item6" }] },
+  ];
+  
+  
+
 const Progress = () => {
+    const [activeName, setActiveName] = useState(null);
     const popUpRef = useRef();
 
-    const ShowPopUp = ( event) => {
+    const ShowPopUp = (event, name) => {
         event.preventDefault();
         if (popUpRef.current) {
-            popUpRef.current.handleOpenMenu(event);
-            console.log("showPopUp Ativo")
+          popUpRef.current.handleOpenMenu(event, name);
+          setActiveName(name);
+          console.log(`ativado: ${name}`)
         }
-    };
+      };
+      
 
     return(
         <div>
@@ -332,7 +349,7 @@ const Progress = () => {
                 </Card>
 
                 <Card
-                onClick={ShowPopUp}
+                onClick={(event) => ShowPopUp(event, "caixas")}
                 href="#"
                 type="picture"
                 // proof=""
@@ -347,12 +364,13 @@ const Progress = () => {
                     <Dot>estilização</Dot>
                     
                 </Card>
-                
-                <PopUp 
-                height="h-[120px]"
-                ref={popUpRef}>
 
-                </PopUp>
+                 <PopUp 
+                 height="h-[120px]"
+                 ref={popUpRef} 
+                 name={activeName}
+                 items={groupedItems}
+                 />
 
                 <h3>Meus Proprios "projetos"</h3>
                 
