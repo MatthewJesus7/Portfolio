@@ -6,9 +6,15 @@ import Tag from "../Items/Tag";
 
 import PopUp from "../Items/popup/PopUp";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const groupedItems = [
+    { name:"fontes",
+        items: [
+        { text: "fonte01", href: "https://matthewjesus7.github.io/html-css/Exercicios/ex018/fonte01.html" }, 
+        { text: "fonte02", href: "https://matthewjesus7.github.io/html-css/Exercicios/ex018/fonte02.html" },
+    ]},
+
     { name:"caixas",
         items: [
         { text: "caixa1", href: "" }, 
@@ -19,7 +25,7 @@ const groupedItems = [
     { name: "group2", items: [{ text: "item3" }, { text: "item4" }] },
     { name: "group3", items: [{ text: "item5" }, { text: "item6" }] },
   ];
-  
+
   
 
 const Progress = () => {
@@ -31,10 +37,26 @@ const Progress = () => {
         if (popUpRef.current) {
           popUpRef.current.handleOpenMenu(event, name);
           setActiveName(name);
+          sizePopUp();
           console.log(`ativado: ${name}`)
         }
       };
       
+    const numItems = () => {
+    const groupName = activeName;
+    const group = groupedItems.find((g) => g.name === groupName);
+    const count = group ? group.items.length : 0;
+    return count;
+    }
+
+    const sizePopUp = () => {
+        const sizePx = numItems() * 40;
+        console.log(sizePx)
+        return sizePx;
+    }
+
+    
+
 
     return(
         <div>
@@ -308,7 +330,8 @@ const Progress = () => {
                 </Card>
 
                 <Card
-                href="https://matthewjesus7.github.io/html-css/Exercicios/ex018/fonte01.html"
+                onClick={(event) => ShowPopUp(event, "fontes")}
+                href="#"
                 type="picture"
                 // proof=""
                 picture="true"
@@ -366,7 +389,7 @@ const Progress = () => {
                 </Card>
 
                  <PopUp 
-                 height="h-[120px]"
+                 height={sizePopUp()}
                  ref={popUpRef} 
                  name={activeName}
                  items={groupedItems}
