@@ -9,20 +9,31 @@ import PopUp from "../Items/popup/PopUp";
 import { useState, useRef, useEffect } from "react";
 
 const groupedItems = [
+    { name: "cores", 
+        items: [
+            { text: "cor01", href: "https://matthewjesus7.github.io/html-css/Exercicios/ex016/index.html" }, 
+            { text: "cor02", href: "https://matthewjesus7.github.io/html-css/Exercicios/ex016/cor02.html" }, 
+            { text: "cor03", href: "https://matthewjesus7.github.io/html-css/Exercicios/ex016/cor03.html" }, 
+        ] },
+
     { name:"fontes",
         items: [
-        { text: "fonte01", href: "https://matthewjesus7.github.io/html-css/Exercicios/ex018/fonte01.html" }, 
-        { text: "fonte02", href: "https://matthewjesus7.github.io/html-css/Exercicios/ex018/fonte02.html" },
+        { text: "fonte01",
+            href: "https://matthewjesus7.github.io/html-css/Exercicios/ex018/fonte01.html" },
+
+        { text: "fonte02",
+            href: "https://matthewjesus7.github.io/html-css/Exercicios/ex018/fonte02.html" },
     ]},
 
     { name:"caixas",
         items: [
-        { text: "caixa1", href: "" }, 
-        { text: "caixa2", href: "" },
-        { text: "caixa3", href: "" }
+        { text: "links",
+        href: "https://matthewjesus7.github.io/html-css/Exercicios/ex020/links.html" }, 
+
+        { text: "pseudo-classes",
+        href: "https://matthewjesus7.github.io/" },
     ]},
 
-    { name: "group2", items: [{ text: "item3" }, { text: "item4" }] },
     { name: "group3", items: [{ text: "item5" }, { text: "item6" }] },
   ];
 
@@ -30,15 +41,16 @@ const groupedItems = [
 
 const Progress = () => {
     const [activeName, setActiveName] = useState(null);
+    const [popupSize, setPopupSize] = useState(0);
     const popUpRef = useRef();
 
     const ShowPopUp = (event, name) => {
         event.preventDefault();
+        calculatePopupSize();
+        
         if (popUpRef.current) {
           popUpRef.current.handleOpenMenu(event, name);
           setActiveName(name);
-          sizePopUp();
-          console.log(`ativado: ${name}`)
         }
       };
       
@@ -49,10 +61,9 @@ const Progress = () => {
     return count;
     }
 
-    const sizePopUp = () => {
+    const calculatePopupSize = () => {
         const sizePx = numItems() * 40;
-        console.log(sizePx)
-        return sizePx;
+        setPopupSize(sizePx);
     }
 
     
@@ -288,13 +299,14 @@ const Progress = () => {
                 </Card>
 
                 <Card
-                href="https://matthewjesus7.github.io/html-css/Exercicios/ex016/cor03.html"
+                onClick={(event) => ShowPopUp(event, "cores")}
+                href="#"
                 type="picture"
                 // proof=""
                 picture="true"
                 backgroundImage="url('')"
-                title={`Aula 16 — "site" exemplo`}
-                text={`Junção de tudo que eu sabia até ali com HTML e CSS`}
+                title={`Aula 16 — Cores`}
+                text={`Adição de cores a elementos css`}
                 >
                     <Dot>CSS</Dot>
                     <Dot>Hierarquia</Dot>
@@ -314,19 +326,6 @@ const Progress = () => {
                 >
                     <Dot>CSS</Dot>
                     <Dot>font-size</Dot>
-                </Card>
-
-                <Card
-                href="https://matthewjesus7.github.io/html-css/Exercicios/ex018/fonte01.html"
-                type="picture"
-                // proof=""
-                picture="true"
-                backgroundImage="url('')"
-                title={`Aula 18 — Fontes Google e Externas`}
-                text={`Aprendendo a Importar, e usar fontes Google e Externas`}
-                >
-                    <Dot>Google fonts</Dot>
-                    <Dot>fontes externas</Dot>
                 </Card>
 
                 <Card
@@ -389,7 +388,7 @@ const Progress = () => {
                 </Card>
 
                  <PopUp 
-                 height={sizePopUp()}
+                 height={popupSize}
                  ref={popUpRef} 
                  name={activeName}
                  items={groupedItems}

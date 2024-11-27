@@ -49,8 +49,8 @@ const PopUp = forwardRef(({ height, name, items }, ref) => {
             }
           : {}),
       }}
-      OpenMenuAnimating={`${height}`}
-      OpenMenuEndAnimating={`${height}`}
+      OpenMenuAnimating={`h-[${height}px]`}
+      OpenMenuEndAnimating={`h-[${height}px]`}
       CloseMenuAnimating={`h-0`}
       CloseMenuEndAnimating={`h-0 none`}
       ref={menuRef}
