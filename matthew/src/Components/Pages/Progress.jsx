@@ -9,6 +9,16 @@ import PopUp from "../Items/popup/PopUp";
 import { useState, useRef, useEffect } from "react";
 
 const groupedItems = [
+
+    { name: "CSS", 
+        items: [
+            { text: "css00" }, 
+            { text: "ex15.1 - css01" },
+            { text: "ex15.2 - css02" },
+            { text: "ex15.2 - css02 pag2" },
+            { text: "css04" }
+        ] },
+
     { name: "cores", 
         items: [
             { text: "cor01", href: "https://matthewjesus7.github.io/html-css/Exercicios/ex016/index.html" }, 
@@ -33,8 +43,6 @@ const groupedItems = [
         { text: "pseudo-classes",
         href: "https://matthewjesus7.github.io/" },
     ]},
-
-    { name: "group3", items: [{ text: "item5" }, { text: "item6" }] },
   ];
 
   
@@ -46,28 +54,42 @@ const Progress = () => {
 
     const ShowPopUp = (event, name) => {
         event.preventDefault();
-        calculatePopupSize();
+
         
         if (popUpRef.current) {
+        setActiveName(name);
+
+        const newSize = calculatePopupSize(name);
+        setPopupSize(newSize);
+
           popUpRef.current.handleOpenMenu(event, name);
-          setActiveName(name);
         }
       };
-      
-    const numItems = () => {
-    const groupName = activeName;
-    const group = groupedItems.find((g) => g.name === groupName);
-    const count = group ? group.items.length : 0;
-    return count;
-    }
 
-    const calculatePopupSize = () => {
-        const sizePx = numItems() * 40;
-        setPopupSize(sizePx);
-    }
+      const calculatePopupSize = (name) => {
+        const group = groupedItems.find((g) => g.name === name);
+        const count = group ? group.items.length : 0;
+        return count * 40;
+    };
 
-    
+    // const numItems = () => {
+    // const groupName = activeName;
+    // const group = groupedItems.find((g) => g.name === groupName);
+    // const count = group ? group.items.length : 0;
+    // return count;
+    // }
 
+    // const calculatePopupSize = () => {
+    //     const sizePx = numItems() * 40;
+    //     return sizePx;
+    // }
+
+    const [childState, setChildState] = useState(false); // Estado no Pai
+
+    const handleChildStateChange = (newState) => {
+      setChildState(!newState); // Atualiza o estado do Pai com o valor vindo do Filho
+    };
+  
 
     return(
         <div>
@@ -273,7 +295,8 @@ const Progress = () => {
                 </Card>
 
                 <Card
-                href="https://matthewjesus7.github.io/html-css/Exercicios/ex015/index.html"
+                onClick={(event) => ShowPopUp(event, "CSS")}
+                href="#"
                 type="picture"
                 // proof=""
                 picture="true"
@@ -285,20 +308,6 @@ const Progress = () => {
                 </Card>
 
                 <Card
-                href="https://matthewjesus7.github.io/html-css/Exercicios/ex15.2/index.html"
-                type="picture"
-                // proof=""
-                picture="true"
-                backgroundImage="url('')"
-                title="Aula 15.2 — Estilização externa com CSS"
-                text={`Aprendendo a diferença com estilos inline, local, e externo, e quando se utilizar cada um.`}
-                >
-                    <Dot>Estilos inline</Dot>
-                    <Dot>Estilos locais</Dot>
-                    <Dot>Estilos externos</Dot>
-                </Card>
-
-                <Card
                 onClick={(event) => ShowPopUp(event, "cores")}
                 href="#"
                 type="picture"
@@ -306,7 +315,7 @@ const Progress = () => {
                 picture="true"
                 backgroundImage="url('')"
                 title={`Aula 16 — Cores`}
-                text={`Adição de cores a elementos css`}
+                text={`Adição de cores a elementos css, sendo o cor03, a junção de tudo o que eu sabia até ali com HTML e CSS`}
                 >
                     <Dot>CSS</Dot>
                     <Dot>Hierarquia</Dot>

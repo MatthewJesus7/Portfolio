@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from "react";
 
 const Menu = forwardRef(({ children, customclass, style,
-    OpenMenuAnimating, OpenMenuEndAnimating, CloseMenuAnimating, CloseMenuEndAnimating }, ref) => {
+    OpenMenuAnimating, OpenMenuEndAnimating, CloseMenuAnimating, CloseMenuEndAnimating, styleOpenMenuAnimating, styleOpenMenuEndAnimating,styleCloseMenuAnimating,styleCloseMenuEndAnimating }, ref) => {
 
     const [isAnimating, setIsAnimating] = useState(false);
     const [aparecerMenu, setAparecerMenu] = useState(false);
@@ -38,8 +38,8 @@ const Menu = forwardRef(({ children, customclass, style,
 
 
     useImperativeHandle(ref, () => ({
-        toggleMenu,
         openMenu,
+        closeMenu,
     }));
 
     const handleClickOutside = (event) => {
@@ -66,7 +66,16 @@ const Menu = forwardRef(({ children, customclass, style,
             <div
                 onMouseLeave={closeMenu}
                 ref={menuRef}
-                style={style}
+                style={{
+                    ...style,
+                    ...aparecerMenu
+                    ? isAnimating
+                        ? styleOpenMenuAnimating
+                        : styleOpenMenuEndAnimating
+                    : isAnimating
+                    ? styleCloseMenuAnimating
+                    : styleCloseMenuEndAnimating
+                }}
                 className={`absolute ${customclass}
                     ${
                     aparecerMenu

@@ -7,8 +7,6 @@ const PopUp = forwardRef(({ height, name, items }, ref) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef();
 
-
-
   const [filteredItems, setFilteredItems] = useState([]);
 
   const handleOpenMenu = (event, name) => {
@@ -24,7 +22,9 @@ const PopUp = forwardRef(({ height, name, items }, ref) => {
     }
   
     setIsMenuOpen(true);
-    menuRef.current.openMenu();
+    if (menuRef.current) {
+      menuRef.current.openMenu();
+    }
   };
 
   useImperativeHandle(ref, () => ({
@@ -42,17 +42,18 @@ const PopUp = forwardRef(({ height, name, items }, ref) => {
       transition-all duration-400 ease-in-out overflow-hidden rounded-md
       backdrop-blur-md bg-gray-500/30 shadow-lg"
       style={{
-        ...(isMenuOpen
-          ? {
-              left: `${position.x}px`,
-              top: `${position.y}px`,
-            }
-          : {}),
+        left: `${position.x}px`,
+        top: `${position.y}px`,
       }}
-      OpenMenuAnimating={`h-[${height}px]`}
-      OpenMenuEndAnimating={`h-[${height}px]`}
-      CloseMenuAnimating={`h-0`}
-      CloseMenuEndAnimating={`h-0 none`}
+      styleOpenMenuAnimating={{height: `${height}px`,}}
+      styleOpenMenuEndAnimating={{height: `${height}px`,}}
+      styleCloseMenuAnimating={{height: '0px',}}
+      styleCloseMenuEndAnimating={{height: '0px',}}
+
+      OpenMenuAnimating={``}
+      OpenMenuEndAnimating={``}
+      CloseMenuAnimating={``}
+      CloseMenuEndAnimating={``}
       ref={menuRef}
     >
       {filteredItems.length > 0 ? (
