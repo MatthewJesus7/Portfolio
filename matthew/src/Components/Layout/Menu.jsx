@@ -8,19 +8,15 @@ const Menu = forwardRef(({ children, customclass, style,
     const menuRef = useRef(null);
 
     const openMenu = () => {
-        console.log('Menu (teoricamente) aberto.')
         setIsAnimating(true);
 
         setTimeout(() => {
-            
             setAparecerMenu(true);
             setIsAnimating(false);
-
         }, 500);
     }
 
     const closeMenu = () => {
-        console.log('Menu (teoricamente) fechado.')
         setIsAnimating(true);
         setTimeout(() => {
             setIsAnimating(false);
@@ -76,7 +72,8 @@ const Menu = forwardRef(({ children, customclass, style,
                     ? styleCloseMenuAnimating
                     : styleCloseMenuEndAnimating
                 }}
-                className={`absolute ${customclass}
+                
+                className={`${customclass}
                     ${
                     aparecerMenu
                         ? isAnimating

@@ -7,20 +7,25 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`flex h-full
-    fixed right-0 z-20
-    ${isOpen ? "translate-x-0" : "translate-x-64"}
-    transform z-20
-    transition-transform duration-300 ease-in-out`}>
-      
+    <div className="">
       <NavButton 
       onClick={() => setIsOpen(!isOpen)}
+      customclass={`fixed right-0 top-0 z-50
+        ${isOpen ? "-translate-x-64" : "translate-x-0"}
+      transform
+      transition-transform duration-300 ease-in-out
+        `}
       >
       {isOpen ? <FiX/> : <FiMenu/>}
       </NavButton>
 
-      <div
-        className={`h-full backdrop-blur-md bg-gray-300/70 w-64 max-w-1/2 shadow-2xl`}
+      <div  className={`h-full
+        fixed right-0 top-0 z-50
+        ${isOpen ? "translate-x-0" : "translate-x-64"}
+        transform
+        transition-transform duration-300 ease-in-out
+
+        backdrop-blur-md bg-gray-300/70 w-64 max-w-1/2 shadow-2xl`}
       >
         <h2 className="text-xl font-bold p-4">
           Menu
