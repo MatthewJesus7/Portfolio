@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from "react";
 
-const Menu = forwardRef(({ children, customclass, style,
-    OpenMenuAnimating, OpenMenuEndAnimating, CloseMenuAnimating, CloseMenuEndAnimating, styleOpenMenuAnimating, styleOpenMenuEndAnimating,styleCloseMenuAnimating,styleCloseMenuEndAnimating }, ref) => {
+const Menu = forwardRef(({ children, customclass, style, onMouseLeave,
+    OpenMenuAnimating, OpenMenuEndAnimating, CloseMenuAnimating, CloseMenuEndAnimating, styleOpenMenuAnimating, styleOpenMenuEndAnimating,styleCloseMenuAnimating,styleCloseMenuEndAnimating, id }, ref) => {
 
     const [isAnimating, setIsAnimating] = useState(false);
     const [aparecerMenu, setAparecerMenu] = useState(false);
@@ -34,6 +34,7 @@ const Menu = forwardRef(({ children, customclass, style,
 
 
     useImperativeHandle(ref, () => ({
+        toggleMenu,
         openMenu,
         closeMenu,
     }));
@@ -41,10 +42,11 @@ const Menu = forwardRef(({ children, customclass, style,
     const handleClickOutside = (event) => {
 
     if (menuRef.current && !menuRef.current.contains(event.target)) {
+    if (onMouseLeave) {
         closeMenu();
-      }
+      }}
     };
-  
+    
     useEffect(() => {
 
       document.addEventListener('mousedown', handleClickOutside);
@@ -55,12 +57,12 @@ const Menu = forwardRef(({ children, customclass, style,
     }, [aparecerMenu]);
     
     return(
-        <div className={`overflow-x-hidden ${aparecerMenu ? 'blur-background' : ''} `}>
+        <div id={id} className={`overflow-x-hidden ${aparecerMenu ? 'blur-background' : ''} `}>
 
         <div className={`overflow-x-hidden`}>
 
             <div
-                onMouseLeave={closeMenu}
+                onMouseLeave={onMouseLeave}
                 ref={menuRef}
                 style={{
                     ...style,

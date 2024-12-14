@@ -5,7 +5,7 @@ import PopUpItem from "./PopUpItem";
 const PopUp = forwardRef(({ height, name, items }, ref) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [customStyle, setCustomStyle] = useState({}); // Estado para controlar os estilos dinamicamente
+  const [customStyle, setCustomStyle] = useState({});
   const menuRef = useRef();
 
   const [filteredItems, setFilteredItems] = useState([]);
@@ -26,13 +26,12 @@ const PopUp = forwardRef(({ height, name, items }, ref) => {
     if (menuRef.current) {
       menuRef.current.openMenu();
     }
-    console.log(position.x)
   };
 
   // Atualiza os estilos dinamicamente com base na posição e no tamanho da tela
   useEffect(() => {
     const updateStyleBasedOnPositionAndMedia = () => {
-      if (position.x < 100 && !window.matchMedia("(min-width: 1280px)").matches) {
+      if (position.x < 120 && !window.matchMedia("(min-width: 1280px)").matches) {
         // Atualiza para alinhar na quina da tela
         setCustomStyle({
           transform: "translateX(0%)",
@@ -62,16 +61,24 @@ const PopUp = forwardRef(({ height, name, items }, ref) => {
 
   useImperativeHandle(ref, () => ({
     openMenu: handleOpenMenu,
+    closeMenu: handleCloseMenu,
   }));
 
   useImperativeHandle(ref, () => ({
     handleOpenMenu,
   }));
 
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false);
+  if (menuRef.current) {
+      menuRef.current.closeMenu();
+  };};
+
   return (
     <Menu
       customclass="pop-up absolute w-56 transition-all duration-400 ease-in-out overflow-hidden rounded-md z-40 backdrop-blur-md bg-gray-500/30 shadow-lg"
-      style={customStyle} // Aplica o estilo dinâmico do estado
+      onMouseLeave={handleCloseMenu}
+      style={customStyle}
       styleOpenMenuAnimating={{ height: `${height}px` }}
       styleOpenMenuEndAnimating={{ height: `${height}px` }}
       styleCloseMenuAnimating={{ height: "0px" }}

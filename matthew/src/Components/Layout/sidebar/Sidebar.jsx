@@ -11,7 +11,7 @@ const Sidebar = () => {
       <NavButton 
       onClick={() => setIsOpen(!isOpen)}
       customclass={`fixed right-0 top-0 z-50
-        ${isOpen ? "-translate-x-64" : "translate-x-0"}
+        ${isOpen ? "-translate-x-64 -rotate-90" : "translate-x-0"}
       transform
       transition-transform duration-300 ease-in-out
         `}

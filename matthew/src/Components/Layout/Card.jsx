@@ -1,11 +1,11 @@
+import { useEffect, useRef, useState } from 'react';
 
-
-function Card({ type, proof, title, text, children, href, backgroundImage, picture, onClick }) {
+const Card = ({ type, proof, title, text, children, href, backgroundImage, picture, onClick, ref }) => {  
 
     return(
         <a href={href} target="_blank" rel="noreferrer">
 
-            <div className={`card flex ${type} md:flex-row -m-5  mb-12 p-5 justify-between rounded-lg
+            <div ref={ref} className={`card flex ${type} md:flex-row -m-5 mb-12 p-5 justify-between rounded-lg
             transition-all hover:bg-gray-300/40 hover:backdrop-blur-md
             `}
             onClick={onClick}
