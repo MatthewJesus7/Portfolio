@@ -1,17 +1,16 @@
-import { useState, useRef, useMemo, useEffect } from "react";
+import { useState, useRef, useMemo } from "react";
 import { groupedItems as groupedItemsData } from "../../data";
 import BackButton from "../Items/Buttons/BackButton";import PopUp from "../Items/popup/PopUp";
 import Section from "../Layout/Section";
 import GustavoGuanabara from "../Sections/html-css/GustavoGuanabara";
 
-import Menu from "../Layout/Menu";
+// import Menu from "../Layout/Menu";
 import CardsMenu from "../Layout/menus/CardsMenu";
+import CardsMenuButton from "../Layout/menus/CardsMenuButton";
 
-import Card from "../Layout/Card";
-import Dot from "../Items/Dot";
-import Tag from "../Items/Tag";
-
-import { FiMenu, FiX, FiArrowLeft } from "react-icons/fi";
+// import Card from "../Layout/Card";
+// import Dot from "../Items/Dot";
+// import Tag from "../Items/Tag";
 
 const Progress = () => {
     const groupedItems = useMemo(() => groupedItemsData, []);
@@ -64,19 +63,11 @@ const Progress = () => {
             <Section customclass="relative z-20 -mb-16">
                 <h2>HTML5 e CSS3</h2>
 
-                <button className="flex w-[364px] hover:bg-gray-400/70 rounded-md transition-all duration-300 ease-in-out " onClick={handleToggleMenu}>
-                    <h3>Curso de HTML e CSS do gustavo Guanabara</h3>
-                    <div 
-                    className={`flex justify-end absolute w-[376px] hover:-translate-y-2 hover:h-8 transition-all duration-300 ease-in-out 
-                    `}>
-                    <p className={`font-semibold text-gray-900 mr-5 size-5 transition-all duration-300 ease-in-out 
-                    ${ menuOpen && "rotate-180"}`}>
-                    {menuOpen ? <FiX/> : <FiArrowLeft/>}
-                    </p>
-                    </div>
-
-                    
-                </button>
+                <CardsMenuButton
+                text="Curso de HTML e CSS do gustavo Guanabara"
+                menuOpen={menuOpen}
+                onClick={handleToggleMenu}
+                />
             </Section>
 
             <CardsMenu ref={menuRef} 

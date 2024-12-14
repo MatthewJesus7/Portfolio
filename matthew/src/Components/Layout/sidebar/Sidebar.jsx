@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavButton from "../../Items/Buttons/NavButton";
 import { NavLink } from "react-router-dom";
-import { FiMenu, FiX, FiArrowLeft } from "react-icons/fi";
+import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,13 +10,13 @@ const Sidebar = () => {
     <div className="">
       <NavButton 
       onClick={() => setIsOpen(!isOpen)}
-      customclass={`fixed right-0 top-0 z-50
+      customclass={`fixed right-0 top-0 z-50 text-gray-900
         ${isOpen ? "-translate-x-64 -rotate-90" : "translate-x-0"}
       transform
       transition-transform duration-300 ease-in-out
         `}
       >
-      {isOpen ? <FiX/> : <FiMenu/>}
+      {isOpen ? <XMarkIcon/> : <Bars3Icon/>}
       </NavButton>
 
       <div  className={`h-full
