@@ -1,7 +1,7 @@
 import Card from "../../Layout/Card"; 
 import Dot from "../../Items/Dot";
 import Tag from "../../Items/Tag";
-import { useRef, useEffect, forwardRef } from "react";
+import { forwardRef } from "react";
 
 const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => { 
 
