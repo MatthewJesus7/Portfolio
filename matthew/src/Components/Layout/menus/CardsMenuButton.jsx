@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const CardsMenuButton = ({ text, menuOpen, onClick }) => {
-
-    const [mouseOver, setMouseOver] = useState(false)
+const CardsMenuButton = ({ text, onClick }) => {
+    
+    const [menuOpen, setMenuOpen] = useState(false)
+    const [mouseOver, setMouseOver] = useState(false);
 
     const handleMouseOver = () => {
         setMouseOver(true);
@@ -22,14 +23,21 @@ const CardsMenuButton = ({ text, menuOpen, onClick }) => {
         };
       },);
 
+      const handleOnClick = () => {
+        setMenuOpen(!menuOpen);
+        if (onClick) {
+            onClick(onClick);
+          };
+      };
+
     return(
-        <button onClick={onClick}
+        <button onClick={handleOnClick}
         onMouseOver={handleMouseOver} 
         className="flex w-[376px] rounded-md transition-all duration-300 ease-in-out -ml-5 px-5" >
             <h3>{text}</h3>
             {/* container do item que gira */}
             <div 
-            className={`flex justify-end absolute w-[376px] hover:-translate-y-1 hover:h-8 transition-all duration-500 ease-in-out 
+            className={`flex justify-end absolute w-[376px] hover:-translate-y-1 h-7 hover:h-9 transition-all duration-500 ease-in-out 
             `}>
             {/* item que gira */}
             <p className={`font-semibold mr-5 size-5 transition-all duration-500 ease-in-out text-gray-500  

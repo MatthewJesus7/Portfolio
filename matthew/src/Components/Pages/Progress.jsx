@@ -19,7 +19,10 @@ const Progress = () => {
     const [activeName, setActiveName] = useState(null);
     const [popupSize, setPopupSize] = useState(0);
     const popUpRef = useRef();
-    const menuRef = useRef();
+
+    const menuRef1 = useRef(null);
+    const menuRef2 = useRef(null);
+
 
     const ShowPopUp = (event, name) => {
         event.preventDefault();
@@ -41,11 +44,12 @@ const Progress = () => {
         return count * 40;
     };
 
-    const handleToggleMenu = () => {
+    const handleToggleMenu = (menuRef) => {
         setMenuOpen(!menuOpen);
+
         if (menuRef.current) {
             menuRef.current.toggleMenu();
-    };
+          }
 };
 
     const [menuHeight, setMenuHeight] = useState(0);
@@ -54,23 +58,20 @@ const Progress = () => {
     setMenuHeight(height);
     };
 
-    console.log(menuHeight);
-
     return(
         <div>
             <BackButton></BackButton>
 
-            <Section customclass="relative z-20 -mb-16">
+            <Section customclass="relative z-20 -mb-8">
                 <h2>HTML5 e CSS3</h2>
-
                 <CardsMenuButton
                 text="Curso de HTML e CSS do gustavo Guanabara"
                 menuOpen={menuOpen}
-                onClick={handleToggleMenu}
+                onClick={() => handleToggleMenu(menuRef1)}
                 />
             </Section>
 
-            <CardsMenu ref={menuRef} 
+            <CardsMenu ref={menuRef1} 
             menuHeight={menuHeight}>
                 <GustavoGuanabara
                 onItemCountChange={handleMenuHeightCalculate}
@@ -78,18 +79,20 @@ const Progress = () => {
             </CardsMenu>
 
 
-            <Section customclass="relative z-20 -mb-16 mt-8">
-                <button onClick={handleToggleMenu}>
-                    <h3>Meus Proprios Projetos</h3>
-                </button>
+            <Section customclass="relative z-20 -mb-8">
+                <CardsMenuButton
+                text="Meus próprios projetos"
+                menuOpen={menuOpen}
+                onClick={() => handleToggleMenu(menuRef2)}
+                />
             </Section>
 
-            {/* <CardsMenu ref={menuRef} 
+            <CardsMenu ref={menuRef2} 
             menuHeight={menuHeight}>
                 <GustavoGuanabara
                 onItemCountChange={handleMenuHeightCalculate}
                 ShowPopUp={ShowPopUp}/>
-            </CardsMenu> */}
+            </CardsMenu>
 
 
 
