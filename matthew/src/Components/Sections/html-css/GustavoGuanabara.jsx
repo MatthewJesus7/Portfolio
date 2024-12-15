@@ -1,39 +1,12 @@
 import Card from "../../Layout/Card"; 
 import Dot from "../../Items/Dot";
 import Tag from "../../Items/Tag";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, forwardRef } from "react";
 
-const GustavoGuanabara = ({ ShowPopUp, onItemCountChange }) => {
-    const guanabaraRef = useRef(null);
-
-    const calculateItemCount = () => {
-    if (guanabaraRef.current) {
-        const items = guanabaraRef.current.children;
-        const itemCount = items.length;
-        return itemCount;
-    }
-};
-
-    const calculateMenuHeight = () => {
-        const itemCount = calculateItemCount();
-        const itemMargin = 28;
-        const itemHeight = 392;
-
-        const itemTotal = itemMargin + itemHeight;
-
-        const menuHeight = itemTotal * itemCount;
-
-        onItemCountChange(menuHeight);
-        return menuHeight;
-    }
-
-    useEffect(() => {
-    calculateMenuHeight();
-    }, []); 
+const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => { 
 
   return (
-
-        <div ref={guanabaraRef}>
+        <div ref={ref}>
                 <Card
                 href="https://matthewjesus7.github.io/html-css/Exercicios/ex001/index.html"
                 type="picture"
@@ -468,6 +441,6 @@ const GustavoGuanabara = ({ ShowPopUp, onItemCountChange }) => {
                 </Card>
         </div>
     );
-};
+});
 
 export default GustavoGuanabara;
