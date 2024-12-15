@@ -1,7 +1,7 @@
 import Card from "../../Layout/Card"; 
 import Dot from "../../Items/Dot";
 import Tag from "../../Items/Tag";
-import { useImperativeHandle, useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 const GustavoGuanabara = ({ ShowPopUp, onItemCountChange }) => {
     const guanabaraRef = useRef(null);
@@ -23,7 +23,6 @@ const GustavoGuanabara = ({ ShowPopUp, onItemCountChange }) => {
 
         const menuHeight = itemTotal * itemCount;
 
-        console.log(menuHeight)
         onItemCountChange(menuHeight);
         return menuHeight;
     }

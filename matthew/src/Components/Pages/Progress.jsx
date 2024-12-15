@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo } from "react";
+import { useState, useRef, useMemo, useImperativeHandle } from "react";
 import { groupedItems as groupedItemsData } from "../../data";
 import BackButton from "../Items/Buttons/BackButton";import PopUp from "../Items/popup/PopUp";
 import Section from "../Layout/Section";
@@ -16,33 +16,13 @@ const Progress = () => {
     const groupedItems = useMemo(() => groupedItemsData, []);
 
     const [menuOpen, setMenuOpen] = useState(false)
-    const [activeName, setActiveName] = useState(null);
-    const [popupSize, setPopupSize] = useState(0);
-    const popUpRef = useRef();
+    const [menuHeight, setMenuHeight] = useState(0);
+
+    
 
     const menuRef1 = useRef(null);
     const menuRef2 = useRef(null);
 
-
-    const ShowPopUp = (event, name) => {
-        event.preventDefault();
-
-        
-        if (popUpRef.current) {
-        setActiveName(name);
-
-        const newSize = calculatePopupSize(name);
-        setPopupSize(newSize);
-
-          popUpRef.current.handleOpenMenu(event, name);
-        }
-      };
-
-      const calculatePopupSize = (name) => {
-        const group = groupedItems.find((g) => g.name === name);
-        const count = group ? group.items.length : 0;
-        return count * 40;
-    };
 
     const handleToggleMenu = (menuRef) => {
         setMenuOpen(!menuOpen);
@@ -50,13 +30,21 @@ const Progress = () => {
         if (menuRef.current) {
             menuRef.current.toggleMenu();
           }
-};
-
-    const [menuHeight, setMenuHeight] = useState(0);
+    };
 
     const handleMenuHeightCalculate = (height) => {
     setMenuHeight(height);
     };
+
+    const popUpRef = useRef();
+
+    const showPopUp = (event, name) => {
+        
+        if (popUpRef.current) {
+            popUpRef.current.showPopUp(event, name);
+        }
+    }
+
 
     return(
         <div>
@@ -75,7 +63,7 @@ const Progress = () => {
             menuHeight={menuHeight}>
                 <GustavoGuanabara
                 onItemCountChange={handleMenuHeightCalculate}
-                ShowPopUp={ShowPopUp}/>
+                ShowPopUp={(event, name) => showPopUp(event, name)}/>
             </CardsMenu>
 
 
@@ -91,16 +79,15 @@ const Progress = () => {
             menuHeight={menuHeight}>
                 <GustavoGuanabara
                 onItemCountChange={handleMenuHeightCalculate}
-                ShowPopUp={ShowPopUp}/>
+                ShowPopUp={(event , name) => showPopUp(event , name)}/>
             </CardsMenu>
 
 
 
             <PopUp 
-            height={popupSize}
-            ref={popUpRef} 
-            name={activeName}
             items={groupedItems}
+            groupedItems={groupedItems}
+            ref={popUpRef}
             />
         </div>
     );

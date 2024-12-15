@@ -2,44 +2,77 @@ import { useState, useEffect, useRef, useImperativeHandle, forwardRef } from "re
 import Menu from "../../Layout/Menu";
 import PopUpItem from "./PopUpItem";
 
-const PopUp = forwardRef(({ height, name, items }, ref) => {
+const PopUp = forwardRef(({ items, groupedItems }, ref) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [customStyle, setCustomStyle] = useState({});
+
+  const [activeName, setActiveName] = useState(null);
+  const [popUpSize, setPopupSize] = useState(0);
+
   const menuRef = useRef();
 
   const [filteredItems, setFilteredItems] = useState([]);
+  
+  useImperativeHandle(ref, () => ({
+    openMenu: handleOpenMenu,
+    closeMenu: handleCloseMenu,
+    showPopUp,
+  }));
 
   const handleOpenMenu = (event, name) => {
     const { pageX, pageY } = event;
 
-    // Define a posição do menu
     setPosition({ x: pageX, y: pageY });
 
-    // Atualiza os itens filtrados com base no "name"
     if (name && Array.isArray(items)) {
       const matchingGroup = items.find((group) => group.name === name);
       setFilteredItems(matchingGroup ? matchingGroup.items : []);
     }
 
-    setIsMenuOpen(true);
+    // setIsMenuOpen(true);
     if (menuRef.current) {
       menuRef.current.openMenu();
     }
   };
 
-  // Atualiza os estilos dinamicamente com base na posição e no tamanho da tela
+  const showPopUp = (event, name) => {
+
+    event.preventDefault();
+
+    setActiveName(name);
+
+    const newSize = calculatePopupSize(name);
+    setPopupSize(newSize);
+    
+    handleOpenMenu(event, name);
+  };
+
+  const calculatePopupSize = (name) => {
+    const group = groupedItems?.find((g) => g.name === name);
+    return group ? group.items.length * 40 : 0;
+  };
+  
+
+    const handleCloseMenu = () => {
+    // setIsMenuOpen(false);
+
+  if (menuRef.current) {
+      menuRef.current.closeMenu();
+  };
+};
+
+
+
   useEffect(() => {
     const updateStyleBasedOnPositionAndMedia = () => {
       if (position.x < 120 && !window.matchMedia("(min-width: 1280px)").matches) {
-        // Atualiza para alinhar na quina da tela
         setCustomStyle({
           transform: "translateX(0%)",
           left: "4%",
           top: `${position.y}px`,
         });
       } else {
-        // Estilo padrão com centralização
         setCustomStyle({
           left: `${position.x}px`,
           top: `${position.y}px`,
@@ -50,37 +83,21 @@ const PopUp = forwardRef(({ height, name, items }, ref) => {
 
     updateStyleBasedOnPositionAndMedia();
 
-    // Adiciona o listener de resize
     window.addEventListener("resize", updateStyleBasedOnPositionAndMedia);
-
-    // Remove o listener ao desmontar o componente
+    
     return () => {
       window.removeEventListener("resize", updateStyleBasedOnPositionAndMedia);
     };
   }, [position]);
 
-  useImperativeHandle(ref, () => ({
-    openMenu: handleOpenMenu,
-    closeMenu: handleCloseMenu,
-  }));
-
-  useImperativeHandle(ref, () => ({
-    handleOpenMenu,
-  }));
-
-  const handleCloseMenu = () => {
-    setIsMenuOpen(false);
-  if (menuRef.current) {
-      menuRef.current.closeMenu();
-  };};
 
   return (
     <Menu
       customclass="pop-up absolute w-56 transition-all duration-400 ease-in-out overflow-hidden rounded-md z-40 backdrop-blur-md bg-gray-500/30 shadow-lg"
       onMouseLeave={handleCloseMenu}
       style={customStyle}
-      styleOpenMenuAnimating={{ height: `${height}px` }}
-      styleOpenMenuEndAnimating={{ height: `${height}px` }}
+      styleOpenMenuAnimating={{ height: `${popUpSize}px` }}
+      styleOpenMenuEndAnimating={{ height: `${popUpSize}px` }}
       styleCloseMenuAnimating={{ height: "0px" }}
       styleCloseMenuEndAnimating={{ height: "0px" }}
       OpenMenuAnimating={``}
@@ -92,7 +109,11 @@ const PopUp = forwardRef(({ height, name, items }, ref) => {
       {filteredItems.length > 0 ? (
         <ul>
           {filteredItems.map((item, idx) => (
-            <PopUpItem key={idx} text={item.text} href={item.href} />
+            <PopUpItem 
+            key={idx} 
+            text={item.text} 
+            href={item.href} 
+            />
           ))}
         </ul>
       ) : (
