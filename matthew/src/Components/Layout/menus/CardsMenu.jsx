@@ -16,7 +16,6 @@ const CardsMenu = forwardRef(({ children, propRef1, propRef2 }, ref) => {
 
   const calculateItemCount = () => {
     if (ref2.current) {
-        console.log(ref2)
       const items = ref2.current.children;
       const itemCount = items.length;
       return itemCount;
@@ -34,7 +33,6 @@ const CardsMenu = forwardRef(({ children, propRef1, propRef2 }, ref) => {
     const menuTotal = itemTotal * itemCount;
 
     setMenuHeight(menuTotal);
-    console.log(menuTotal);
 
     return menuTotal;
   };
@@ -53,7 +51,7 @@ const CardsMenu = forwardRef(({ children, propRef1, propRef2 }, ref) => {
       styleCloseMenuEndAnimating={{ height: "0px" }}
       ref={ref1}
     >
-      <Section ref={ref2}>
+      <Section>
         {children}
       </Section>
     </Menu>
