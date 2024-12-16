@@ -3,7 +3,7 @@ import Section from "../Section";
 
 import { forwardRef, useEffect, useState, useImperativeHandle } from "react";
 
-const CardsMenu = forwardRef(({ children, propRef1, propRef2 }, ref) => {
+const CardsMenu = forwardRef(({ children, propRef1, propRef2, customclass }, ref) => {
   const ref1 = propRef1;
   const ref2 = propRef2;
 
@@ -44,7 +44,7 @@ const CardsMenu = forwardRef(({ children, propRef1, propRef2 }, ref) => {
   return (
     <Menu
       id="menu"
-      customclass="relative z-10 transition-all duration-1000 ease-in-out overflow-hidden rounded-md shadow-lg"
+      customclass={`relative z-10 transition-all duration-1000 ease-in-out overflow-hidden rounded-md shadow-lg ${customclass}`}
       styleOpenMenuAnimating={{ height: `${menuHeight}px` }}
       styleOpenMenuEndAnimating={{ height: `${menuHeight}px` }}
       styleCloseMenuAnimating={{ height: "0px" }}

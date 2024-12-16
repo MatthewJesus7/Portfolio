@@ -1,19 +1,21 @@
 import { useState, useRef, useMemo } from "react";
-import { groupedItems as groupedItemsData } from "../../data";
+import { popUpItems } from "../../data";
 import BackButton from "../Items/Buttons/BackButton";
 import PopUp from "../Items/popup/PopUp";
 import Section from "../Layout/Section";
 import GustavoGuanabara from "../Sections/html-css/GustavoGuanabara";
 import CardsMenu from "../Layout/menus/CardsMenu";
 import CardsMenuButton from "../Layout/menus/CardsMenuButton";
+import MyProjects from "../Sections/html-css/MyProjects";
 
 const Progress = () => {
-    const groupedItems = useMemo(() => groupedItemsData, []);
+    const groupedItems = useMemo(() => popUpItems, []);
     const [menuOpen, setMenuOpen] = useState(false);
 
     const popUpRef = useRef();
 
     const guanabaraRef = useRef();
+const myProjectsRef = useRef();
     
     const menuRef1 = useRef(null);
     const menuRef2 = useRef(null);
@@ -63,12 +65,15 @@ const Progress = () => {
 
             <CardsMenu 
             propRef1={menuRef2} 
-            propRef2={guanabaraRef}>
-                <GustavoGuanabara
-                    ref={guanabaraRef}
+            propRef2={myProjectsRef}
+            >
+                <MyProjects
+                    ref={myProjectsRef}
                     ShowPopUp={(event, name) => showPopUp(event, name)}
                 />
             </CardsMenu>
+
+            <div className="h-[28vh] w-full"></div>
 
             <PopUp
                 items={groupedItems}

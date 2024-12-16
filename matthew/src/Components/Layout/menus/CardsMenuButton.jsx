@@ -40,7 +40,7 @@ const CardsMenuButton = ({ text, onClick }) => {
             className={`flex justify-end absolute w-[90%] hover:-translate-y-1 h-7 hover:h-9 transition-all duration-500 ease-in-out 
             `}>
             {/* item que gira */}
-            <p className={`font-semibold size-5 transition-all duration-500 ease-in-out text-gray-500  
+            <p className={`flex justify-center items-center font-semibold size-5 transition-all duration-500 ease-in-out text-gray-900
             ${ menuOpen && "rotate-180 origin-center"}`}>
 
             {menuOpen 
@@ -53,7 +53,7 @@ const CardsMenuButton = ({ text, onClick }) => {
             <div 
             className={`absolute mt-7 h-1 
                 rounded-sm
-                bg-gradient-to-r from-gray-700/50 to-transparent
+                bg-gradient-to-r from-gray-900/50 to-transparent
                 transition-all duration-500 ease-out
             ${mouseOver
             ? 'w-3/4'
