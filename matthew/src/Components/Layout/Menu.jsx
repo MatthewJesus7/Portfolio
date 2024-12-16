@@ -39,6 +39,7 @@ const Menu = forwardRef(({ children, customclass, style, onMouseLeave,
         closeMenu,
     }));
 
+    useEffect(() => {
     const handleClickOutside = (event) => {
 
     if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -47,14 +48,14 @@ const Menu = forwardRef(({ children, customclass, style, onMouseLeave,
       }}
     };
     
-    useEffect(() => {
+    
 
       document.addEventListener('mousedown', handleClickOutside);
 
       return () => {
         document.removeEventListener('mousedown', handleClickOutside);
       };
-    }, [aparecerMenu]);
+    }, [setAparecerMenu, onMouseLeave]);
     
     return(
         <div id={id} className={`overflow-x-hidden ${aparecerMenu ? 'blur-background' : ''} `}>

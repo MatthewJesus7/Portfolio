@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
-
 const Card = ({ type, proof, title, text, children, href, backgroundImage, picture, onClick, ref }) => {  
 
     return(

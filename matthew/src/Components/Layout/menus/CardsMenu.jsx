@@ -1,7 +1,7 @@
 import Menu from "../Menu";
 import Section from "../Section";
 
-import { forwardRef, useRef, useEffect, useState, useImperativeHandle } from "react";
+import { forwardRef, useEffect, useState, useImperativeHandle } from "react";
 
 const CardsMenu = forwardRef(({ children, propRef1, propRef2 }, ref) => {
   const ref1 = propRef1;
@@ -14,6 +14,7 @@ const CardsMenu = forwardRef(({ children, propRef1, propRef2 }, ref) => {
     ref2: ref2,
   }));
 
+  useEffect(() => {
   const calculateItemCount = () => {
     if (ref2.current) {
       const items = ref2.current.children;
@@ -22,7 +23,7 @@ const CardsMenu = forwardRef(({ children, propRef1, propRef2 }, ref) => {
     }
     return 0;
   };
-
+  
   const calculateMenuHeight = () => {
     const itemCount = calculateItemCount();
     const itemMargin = 28;
@@ -37,9 +38,8 @@ const CardsMenu = forwardRef(({ children, propRef1, propRef2 }, ref) => {
     return menuTotal;
   };
 
-  useEffect(() => {
     calculateMenuHeight();
-  }, [children]);
+  }, [children, ref2]);
 
   return (
     <Menu

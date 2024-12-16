@@ -1,8 +1,7 @@
 import Footer from "../Sections/Footer";
 import FollowMouse from "../anim/FollowMouse";
 import Sidebar from "./sidebar/Sidebar";
-import NavButton from "../Items/Buttons/NavButton"
-import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const Layout = () => {
     return(

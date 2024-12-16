@@ -7,7 +7,6 @@ const PopUp = forwardRef(({ items, groupedItems }, ref) => {
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [customStyle, setCustomStyle] = useState({});
 
-  const [activeName, setActiveName] = useState(null);
   const [popUpSize, setPopupSize] = useState(0);
 
   const menuRef = useRef();
@@ -39,8 +38,6 @@ const PopUp = forwardRef(({ items, groupedItems }, ref) => {
   const showPopUp = (event, name) => {
 
     event.preventDefault();
-
-    setActiveName(name);
 
     const newSize = calculatePopupSize(name);
     setPopupSize(newSize);
