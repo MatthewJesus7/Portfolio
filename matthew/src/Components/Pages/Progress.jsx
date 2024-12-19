@@ -7,6 +7,8 @@ import GustavoGuanabara from "../Sections/html-css/GustavoGuanabara";
 import CardsMenu from "../Layout/menus/CardsMenu";
 import CardsMenuButton from "../Layout/menus/CardsMenuButton";
 import MyProjects from "../Sections/html-css/MyProjects";
+import Challenges from "../Sections/html-css/Challenges";
+import GuanabaraJS from "../Sections/JavaScript/GuanabaraJS";
 
 const Progress = () => {
     const groupedItems = useMemo(() => popUpItems, []);
@@ -15,10 +17,14 @@ const Progress = () => {
     const popUpRef = useRef();
 
     const guanabaraRef = useRef();
-const myProjectsRef = useRef();
+    const myProjectsRef = useRef();
+    const challengesRef = useRef();
+    const guanabaraJsRef = useRef();
     
     const menuRef1 = useRef(null);
     const menuRef2 = useRef(null);
+    const menuRef3 = useRef(null);
+    const menuRef4 = useRef(null);
 
     const handleToggleMenu = (menuRef) => {
         setMenuOpen(!menuOpen);
@@ -57,7 +63,7 @@ const myProjectsRef = useRef();
 
             <Section customclass="relative z-20 -mb-8">
                 <CardsMenuButton
-                    text="Meus próprios projetos"
+                    text="Meus próprios projetos HTML e CSS"
                     menuOpen={menuOpen}
                     onClick={() => handleToggleMenu(menuRef2)}
                 />
@@ -69,11 +75,54 @@ const myProjectsRef = useRef();
             >
                 <MyProjects
                     ref={myProjectsRef}
-                    ShowPopUp={(event, name) => showPopUp(event, name)}
+                    showPopUp={(event, name) => showPopUp(event, name)}
                 />
             </CardsMenu>
 
-            <div className="h-[28vh] w-full"></div>
+            <Section customclass="relative z-20 -mb-8">
+                <CardsMenuButton
+                    text="Desafios HTML e CSS"
+                    menuOpen={menuOpen}
+                    onClick={() => handleToggleMenu(menuRef3)}
+                />
+            </Section>
+
+            <CardsMenu 
+            propRef1={menuRef3} 
+            propRef2={challengesRef}
+            >
+                <Challenges
+                    ref={challengesRef}
+                    showPopUp={(event, name) => showPopUp(event, name)}
+                />
+            </CardsMenu>
+
+            {/* JavaScript */}
+
+            <Section customclass="relative z-20 -mb-8">
+                <h2>JavaScript</h2>
+                <CardsMenuButton
+                    text="Curso de JavaScript do Gustavo Guanabara"
+                    menuOpen={menuOpen}
+                    onClick={() => handleToggleMenu(menuRef4)}
+                />
+            </Section>
+
+            <CardsMenu 
+            propRef1={menuRef4} 
+            propRef2={guanabaraJsRef}>
+                <GuanabaraJS
+                ref={guanabaraJsRef}
+                showPopUp={(event, name) => showPopUp(event, name)}
+                />
+                
+                {/* <GustavoGuanabara
+                    ref={guanabaraRef}
+                    ShowPopUp={(event, name) => showPopUp(event, name)}
+                /> */}
+            </CardsMenu>
+
+            {/* <div className="h-[28vh] w-full"></div> */}
 
             <PopUp
                 items={groupedItems}

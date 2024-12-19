@@ -84,5 +84,17 @@ export const popUpItems = [
         { text: "sobre", href: "https://matthewjesus7.github.io/html-css/Exercicios/prezepadas/3terceira-prezepada/sobre.html" },
     ]},
 
+    { name: "desafio12", 
+      items: [
+        { text: "Sozinho", href: "https://matthewjesus7.github.io/html-css/exercicios/desafios/d12-eu/cordel.html" },
+        { text: "Com gustavoGuanabara", href: "https://matthewjesus7.github.io/html-css/exercicios/desafios/d12/index.html" },
+    ]},
+
+    { name: "desafio13", 
+      items: [
+        { text: "Tabela 1", href: "https://matthewjesus7.github.io/html-css/exercicios/desafios/d13/d13-1.html" },
+        { text: "Tabela 2", href: "https://matthewjesus7.github.io/html-css/exercicios/desafios/d13/d13-2.html" },
+    ]},
+
   ];
   
