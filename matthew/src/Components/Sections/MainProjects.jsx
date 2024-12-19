@@ -21,6 +21,23 @@ function MainProjects() {
         </Card>
 
         <Card
+        href="https://www.linkedin.com/posts/matheus-costa-b01372205_reactnative-expo-firebase-activity-7256374635536007169-vw9V?utm_source=share&utm_medium=member_desktop"
+        type="picture"
+        // proof=""
+        picture="true"
+        backgroundImage="url('/Imagens/expo_esqueletodeapp.jpg')"
+        title="Esqueleto de App"
+        text={`Criei este projeto como base técnica para acelerar o desenvolvimento de aplicativos. Ele inclui autenticação segura com Firebase, navegação estruturada com Expo e tela de perfil funcional. O principal objetivo foi aprofundar meu conhecimento no Firebase e Expo, enfrentando desafios como navegação e integração de imagens. Essa experiência melhorou minha eficiência no desenvolvimento mobile..`}
+        >
+        <Dot>Expo</Dot>  <Dot>Firebase</Dot> <Dot>NativeWind</Dot> <Dot>JavaScript</Dot> <Dot>Git & GitHub</Dot>
+        </Card>
+
+        {/* Esqueleto de App
+Criei este projeto como base técnica para acelerar o desenvolvimento de aplicativos. Ele inclui autenticação segura com Firebase, navegação estruturada com Expo e tela de perfil funcional. O principal objetivo foi aprofundar meu conhecimento no Firebase e Expo, enfrentando desafios como navegação e integração de imagens. Essa experiência melhorou minha eficiência no desenvolvimento mobile.
+
+Tecnologias: Expo, Firebase, Tailwind */}
+
+        <Card
         href="https://matthewjesus7.github.io/PathOfSucess/MainPage/LandingPage.html"
         type="picture"
         // proof=""
