@@ -1,27 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import HoverBar from "../../anim/HoverBar";
 
 const CardsMenuButton = ({ text, onClick }) => {
     
     const [menuOpen, setMenuOpen] = useState(false)
+
     const [mouseOver, setMouseOver] = useState(false);
-
-    const handleMouseOver = () => {
-        setMouseOver(true);
-    }
-
-    const handleMouseOut = () => {
-        setMouseOver(false)
-    }
-
-    useEffect(() => {
-
-        document.addEventListener('mouseout', handleMouseOut);
-  
-        return () => {
-          document.removeEventListener('mouseout', handleMouseOut);
-        };
-      },);
+    const handleMouseOver = () => setMouseOver(true);
+    const handleMouseOut = () => setMouseOver(false);
 
       const handleOnClick = () => {
         setMenuOpen(!menuOpen);
@@ -33,6 +20,7 @@ const CardsMenuButton = ({ text, onClick }) => {
     return(
         <button onClick={handleOnClick}
         onMouseOver={handleMouseOver} 
+        onMouseOut={handleMouseOut}
         className="flex w-full rounded-md transition-all duration-300 ease-in-out " >
             <h3>{text}</h3>
             {/* container do item que gira */}
@@ -50,17 +38,9 @@ const CardsMenuButton = ({ text, onClick }) => {
             </div>
 
             {/* div abaixo animada */}
-            <div 
-            className={`absolute mt-7 h-1 
-                rounded-sm
-                bg-gradient-to-r from-gray-900/50 to-transparent
-                transition-all duration-500 ease-out
-            ${mouseOver
-            ? 'w-3/4'
-            : 'w-0'
-            }
-            `}>
-            </div>
+            <HoverBar isHovered={mouseOver}
+            customclass="mt-7 h-1"
+            />
         </button>
     );
 };
