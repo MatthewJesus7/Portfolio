@@ -96,5 +96,34 @@ export const popUpItems = [
         { text: "Tabela 2", href: "https://matthewjesus7.github.io/html-css/exercicios/desafios/d13/d13-2.html" },
     ]},
 
+    // JavaScript
+
+    { name: "aula06js", 
+      items: [
+        { text: "Ex002", href: "https://matthewjesus7.github.io/JavaScript/aula06/ex002.html" },
+        { text: "Ex003", href: "https://matthewjesus7.github.io//JavaScript/aula06/ex003.html" },
+        { text: "Ex004", href: "https://matthewjesus7.github.io//JavaScript/aula06/ex004.html" },
+    ]},
+
+    { name: "aula10js", 
+      items: [
+        { text: "Ex006", href: "https://matthewjesus7.github.io/JavaScript/aula10/ex006.html" },
+        { text: "Ex007", href: "https://matthewjesus7.github.io//JavaScript/aula10/ex007.html" },
+    ]},
+
+    { name: "aula11js", 
+      items: [
+        { text: "Ex008.js", href: "https://matthewjesus7.github.io/JavaScript/aula11/ex008.js" },
+        { text: "Ex009.js", href: "https://matthewjesus7.github.io//JavaScript/aula11/ex009.js" },
+        { text: "Ex010.html", href: "https://matthewjesus7.github.io//JavaScript/aula11/ex010.html" },
+    ]},
+
+    { name: "aula12js", 
+      items: [
+        { text: "Ex011.js", href: "https://matthewjesus7.github.io/JavaScript/aula12/ex011.js" },
+        { text: "Ex012.js", href: "https://matthewjesus7.github.io//JavaScript/aula12/ex012.js" },
+        { text: "Ex013.js", href: "https://matthewjesus7.github.io//JavaScript/aula12/ex013.js" },
+    ]},
+
   ];
   

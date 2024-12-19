@@ -79,23 +79,24 @@ const Progress = () => {
                 />
             </CardsMenu>
 
-            <Section customclass="relative z-20 -mb-8">
-                <CardsMenuButton
-                    text="Desafios HTML e CSS"
-                    menuOpen={menuOpen}
-                    onClick={() => handleToggleMenu(menuRef3)}
-                />
-            </Section>
-
-            <CardsMenu 
-            propRef1={menuRef3} 
-            propRef2={challengesRef}
-            >
-                <Challenges
-                    ref={challengesRef}
-                    showPopUp={(event, name) => showPopUp(event, name)}
-                />
-            </CardsMenu>
+            <div>
+                <Section customclass="relative z-20 -mb-8">
+                    <CardsMenuButton
+                        text="Desafios HTML e CSS"
+                        menuOpen={menuOpen}
+                        onClick={() => handleToggleMenu(menuRef3)}
+                    />
+                </Section>
+                <CardsMenu
+                propRef1={menuRef3}
+                propRef2={challengesRef}
+                >
+                    <Challenges
+                        ref={challengesRef}
+                        showPopUp={(event, name) => showPopUp(event, name)}
+                    />
+                </CardsMenu>
+            </div>
 
             {/* JavaScript */}
 
@@ -115,14 +116,7 @@ const Progress = () => {
                 ref={guanabaraJsRef}
                 showPopUp={(event, name) => showPopUp(event, name)}
                 />
-                
-                {/* <GustavoGuanabara
-                    ref={guanabaraRef}
-                    ShowPopUp={(event, name) => showPopUp(event, name)}
-                /> */}
             </CardsMenu>
-
-            {/* <div className="h-[28vh] w-full"></div> */}
 
             <PopUp
                 items={groupedItems}
