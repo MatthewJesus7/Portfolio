@@ -17,7 +17,7 @@ function Footer() {
         }`}
       >
         <p className="text-center">
-          Versão 1.0 do meu Portfólio. <br />
+          Versão 1.1 do meu Portfólio. <br />
           Design inspirado de:
           <a
             href="https://brittanychiang.com/#projects"

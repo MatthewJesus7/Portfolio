@@ -117,6 +117,8 @@ const Progress = () => {
                 showPopUp={(event, name) => showPopUp(event, name)} />
             </CardsMenu>
 
+            <div></div>
+
             <PopUp
                 items={groupedItems}
                 groupedItems={groupedItems}

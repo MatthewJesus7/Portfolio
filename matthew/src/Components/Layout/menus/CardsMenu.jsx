@@ -3,11 +3,14 @@ import Section from "../Section";
 
 import { forwardRef, useEffect, useState, useImperativeHandle } from "react";
 
+
+
 const CardsMenu = forwardRef(({ children, propRef1, propRef2, customclass }, ref) => {
+  
+  const [maxHeight, setMaxHeight] = useState('0px');
+
   const ref1 = propRef1;
   const ref2 = propRef2;
-
-  const [menuHeight, setMenuHeight] = useState(0);
 
   useImperativeHandle(ref, () => ({
     ref1: ref1,
@@ -15,45 +18,38 @@ const CardsMenu = forwardRef(({ children, propRef1, propRef2, customclass }, ref
   }));
 
   useEffect(() => {
-  const calculateItemCount = () => {
+
+  const recalculateHeight = () => {
     if (ref2.current) {
-      const items = ref2.current.children;
-      const itemCount = items.length;
-      return itemCount;
+      const menuHeight = ref2.current.scrollHeight;
+      setMaxHeight(`${menuHeight + 10}px`);
+      console.log(menuHeight);
     }
-    return 0;
-  };
-  
-  const calculateMenuHeight = () => {
-    const itemCount = calculateItemCount();
-    const itemMargin = 28;
-    const itemHeight = 392;
-
-    const itemTotal = itemMargin + itemHeight;
-
-    const menuTotal = itemTotal * itemCount;
-
-    setMenuHeight(menuTotal);
-
-    return menuTotal;
   };
 
-    calculateMenuHeight();
+    recalculateHeight();
+
+    const handleResize = () => {
+      recalculateHeight();
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, [children, ref2]);
 
   return (
     <Menu
       id="menu"
       customclass={`relative z-10 transition-all duration-1000 ease-in-out overflow-hidden rounded-md shadow-lg ${customclass}`}
-      styleOpenMenuAnimating={{ height: `${menuHeight}px` }}
-      styleOpenMenuEndAnimating={{ height: `${menuHeight}px` }}
+      styleOpenMenuAnimating={{ height: maxHeight }}
+      styleOpenMenuEndAnimating={{ height: maxHeight }}
       styleCloseMenuAnimating={{ height: "0px" }}
       styleCloseMenuEndAnimating={{ height: "0px" }}
       ref={ref1}
     >
-      <Section>
-        {children}
-      </Section>
+      <Section>{children}</Section>
     </Menu>
   );
 });
