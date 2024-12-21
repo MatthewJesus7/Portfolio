@@ -23,7 +23,6 @@ const CardsMenu = forwardRef(({ children, propRef1, propRef2, customclass }, ref
     if (ref2.current) {
       const menuHeight = ref2.current.scrollHeight;
       setMaxHeight(`${menuHeight + 10}px`);
-      console.log(menuHeight);
     }
   };
 
