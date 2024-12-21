@@ -40,11 +40,11 @@ const ContactMe = () => {
     <>
     
     <BackButton />
-    <Section>
+    <Section customclass="pt-20">
 
         
 
-    <main className='relative z-20 max-w-lg mx-auto p-6 bg-gray-50/50 shadow-md rounded-lg'>
+    <main className=' relative z-20 max-w-lg mx-auto p-6 bg-gray-50/50 shadow-md rounded-lg'>
 
         <h1 className="text-2xl font-semibold text-gray-700 mb-4">Entre em Contato</h1>
         
