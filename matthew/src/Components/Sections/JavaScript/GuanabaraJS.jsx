@@ -11,7 +11,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
             <Card
                 href="https://matthewjesus7.github.io/JavaScript/aula04/ex001.html"
                 type="picture"
-                proof="15 de Abril— 2024"
+                proof="15 de Abril — 2024"
                 picture="true"
                 backgroundImage="url('')"
                 title="Primeiro Script — Qual o seu nome?"
@@ -102,20 +102,145 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 </Card>
 
                 <Card
-                onClick={(event) => showPopUp(event, "aula12js")}
+                onClick={(event) => showPopUp(event, "aula12exjs")}
                 href="#"
                 type="picture"
                 // proof=""
                 picture="true"
                 backgroundImage="url('')"
-                title="Aula 12 - Exercicios"
-                text={`Operador menor (<), e maior (>), e Switch case`}
+                title="Aula 12 Exercicios - horario e período"
+                text={`Um script de resposta ao horario, com ifs e else. Não contem as melhores práticas pois eu ainda estava aprendendo.`}
                 >
                     <Dot><Tag>Script</Tag></Dot>
                     <Dot>Manipulação de DOM</Dot>
-                    <Dot>Switch case</Dot>
-                    <Dot>&lt;</Dot>
-                    <Dot>&gt;</Dot>
+                    <Dot>if e else</Dot>
+                </Card>
+
+                <Card
+                onClick={(event) => showPopUp(event, "aula12excopyjs")}
+                href="#"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title="Aula 12 Exercicios - Verificador de idade"
+                text={`Um script que responde de acordo com a data de nascimento, fazendo o cálculo de sua idade, e também seu genero.`}
+                >
+                    <Dot><Tag>Script</Tag></Dot>
+                    <Dot>Manipulação de DOM</Dot>
+                    <Dot>if e else</Dot>
+                </Card>
+
+                <Card
+                href="https://matthewjesus7.github.io/JavaScript/aula13/ambiente.js"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title="Aula 13 - while"
+                text={`Aula relativa a loops, começando por while.`}
+                >
+                    <Dot>do</Dot>
+                    <Dot>while</Dot>
+                </Card>
+
+                <Card
+                href="https://matthewjesus7.github.io/JavaScript/aula14/ambiente.js"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title="Aula 14 - for"
+                text={`Loop for em JavaScript, e seu funcionamento.`}
+                >
+                    <Dot>for</Dot>
+                </Card>
+
+                <Card
+                onClick={(event) => showPopUp(event, "aula14ex")}
+                href="#"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title="Aula 14 Exercicios - Contador por passo"
+                text={`Utilizando loops, um contador, onde recebe: numero inicial, numero final, e o passo desejado, e traz um resultado visivel na UX.`}
+                >
+                    <Dot>Manipulação de DOM</Dot>
+                    <Dot>ifs e else</Dot>
+                    <Dot>while</Dot>
+                </Card>
+
+                <Card
+                onClick={(event) => showPopUp(event, "aula14ex02")}
+                href="#"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title="Aula 14 Exercicios - tabuada"
+                text={`Utilizando loops, uma tabuada de 0 a 10, que pega qualquer número e traz um resultado visivel na UX.`}
+                >
+                    <Dot>Manipulação de DOM</Dot>
+                    <Dot>ifs e else</Dot>
+                    <Dot>for</Dot>
+                </Card>
+
+                <Card
+                onClick={(event) => showPopUp(event, "aula15")}
+                href="#"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title="Aula 15 - Arrays"
+                text={`Nesta aula, aprendemos sobre arrays e loops for in, para leitura.`}
+                >
+                    <Dot>Arrays</Dot>
+                    <Dot>for (in)</Dot>
+                </Card>
+
+                <Card
+                onClick={(event) => showPopUp(event, "aula16")}
+                href="#"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title="Aula 16 - funções"
+                text={`Nesta aula, aprendemos sobre funções e props que podem ser passadas.`}
+                >
+                    <Dot>Function()</Dot>
+                    <Dot>Chamada</Dot>
+                </Card>
+
+                <Card
+                onClick={(event) => showPopUp(event, "aula16ex")}
+                href="#"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title="Aula 16 Exercicios - Analisador de números"
+                text={`Esse execício se trata de um analisador de numeros, onde se insere nmeros num array, e manupula esses números de diversas maneiras.`}
+                >
+                    <Dot>Manipulação de DOM</Dot>
+                    <Dot>Function()</Dot>
+                    <Dot>arrays</Dot>
+                    <Dot>for in</Dot>
+                </Card>
+
+                <Card
+                href="https://matthewjesus7.github.io/JavaScript/aula17/objeto01.js"
+                type="picture"
+                // proof=""
+                picture="true"
+                backgroundImage="url('')"
+                title="Aula 17 - Objetos"
+                text={`Na última aula do curso básico, aprendemos o início de objetos JavaScript`}
+                >
+                    <Dot>Objetos</Dot>
+                    <Dot>Introdução</Dot>
                 </Card>
         </div>
     );

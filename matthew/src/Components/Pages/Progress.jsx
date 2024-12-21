@@ -114,8 +114,7 @@ const Progress = () => {
             propRef2={guanabaraJsRef}>
                 <GuanabaraJS
                 ref={guanabaraJsRef}
-                showPopUp={(event, name) => showPopUp(event, name)}
-                />
+                showPopUp={(event, name) => showPopUp(event, name)} />
             </CardsMenu>
 
             <PopUp

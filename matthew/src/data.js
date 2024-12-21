@@ -124,6 +124,54 @@ export const popUpItems = [
         { text: "Ex012.js", href: "https://matthewjesus7.github.io//JavaScript/aula12/ex012.js" },
         { text: "Ex013.js", href: "https://matthewjesus7.github.io//JavaScript/aula12/ex013.js" },
     ]},
+    
+    { name: "aula12exjs", 
+      items: [
+        { text: "horario.html", href: "https://matthewjesus7.github.io/JavaScript/aula12ex/modelo.html" },
+        { text: "script.js", href: "https://matthewjesus7.github.io//JavaScript/aula12ex/script.js" },
+    ]},
+
+    { name: "aula12excopyjs", 
+      items: [
+        { text: "verificador.html", href: "https://matthewjesus7.github.io/JavaScript/aula12ex%20copy/modelo.html" },
+        { text: "script.js", href: "https://matthewjesus7.github.io//JavaScript/aula12ex%20copy/script.js" },
+    ]},
+
+    { name: "aula14ex", 
+      items: [
+        { text: "contador.html", href: "https://matthewjesus7.github.io/JavaScript/aula14ex/ex016/vamoscontar.html" },
+        { text: "script.js", href: "https://matthewjesus7.github.io//JavaScript/aula14ex/ex016/script.js" },
+    ]},
+
+    { name: "aula14ex02", 
+      items: [
+        { text: "tabuada.html", href: "https://matthewjesus7.github.io/JavaScript/aula14ex/ex017/tabuada.html" },
+        { text: "script.js", href: "https://matthewjesus7.github.io//JavaScript/aula14ex/ex017/script.js" },
+    ]},
+
+    { name: "aula15", 
+      items: [
+        { text: "ambiente.js", href: "https://matthewjesus7.github.io/JavaScript/aula15/ambiente.js" },
+        { text: "vetornatela.js", href: "https://matthewjesus7.github.io//JavaScript/aula15/vetornatela.js" },
+    ]},
+
+    { name: "aula16", 
+      items: [
+        { text: "função 01.js", href: "https://matthewjesus7.github.io/JavaScript/aula16/funcao01.js" },
+        { text: "função 02.js", href: "https://matthewjesus7.github.io/JavaScript/aula16/funcao02.js" },
+        { text: "função 03.js", href: "https://matthewjesus7.github.io/JavaScript/aula16/funcao03.js" },
+        { text: "função 04.js", href: "https://matthewjesus7.github.io/JavaScript/aula16/funcao04.js" },
+        { text: "função 05.js", href: "https://matthewjesus7.github.io/JavaScript/aula16/funcao05.js" },
+    ]},
+
+    { name: "aula16ex", 
+      items: [
+        { text: "analisador.html", href: "https://matthewjesus7.github.io/JavaScript/aula16ex/modelo.html" },
+        { text: "script.js", href: "https://matthewjesus7.github.io//JavaScript/aula16ex/script.js" },
+
+        { text: "analisador.html com guanabara", href: "https://matthewjesus7.github.io/JavaScript/aula16exguanab/modelo.html" },
+        { text: "script.js com guanabara", href: "https://matthewjesus7.github.io//JavaScript/aula16exguanab/script.js" },
+    ]},
 
   ];
   
