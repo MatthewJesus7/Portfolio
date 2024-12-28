@@ -9,7 +9,7 @@ const Card = ({ type, proof, title, text, children, href, backgroundImage, pictu
             onClick={onClick}
             >
 
-                <div className={ `shrink-0 mb-3 ${picture}`}
+                <div className={ `shrink-0 mb-3 bg-white ${picture}`}
 
                 style={{ backgroundImage: backgroundImage, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', }}
                 >

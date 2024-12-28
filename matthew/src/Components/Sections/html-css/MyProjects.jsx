@@ -12,7 +12,7 @@ const MyProjects = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_27.png')"
                 title="z-erro01 - prezepada 0"
                 text={`Mesmo sem as capacidades necessarias para fazer, ainda assim, realizei a primeira tentativa para criar uma loja, mas percebi que me faltava muito ainda.`}
                 >
@@ -24,7 +24,7 @@ const MyProjects = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_28.png')"
                 title="Primeira Prezepada"
                 text={`Mesmo sem muita experiencia na programação, aprendi posicionamentos basicos com css, e implementei, mudando as imagens para onde eu gostaria`}
                 >
@@ -46,7 +46,7 @@ const MyProjects = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_29.png')"
                 title="Segunda Prezepada - Desafio 01"
                 text={`Me propus a aprender Grid Layout e experimenta-lo através desse projeto, o qual é um auto-desafio de realizar um site o mais completo possivel`}
                 >
@@ -65,7 +65,7 @@ const MyProjects = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/prezepada03_1.png')"
                 title="Terceira Prezepada"
                 text={`A terceira prezepada, foi apenas uma demonstração das minhas habilidades + web Design da época`}
                 >
@@ -78,7 +78,7 @@ const MyProjects = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_31.png')"
                 title={`Prezepada 04`}
                 text={`Meu programa de treinos sendo colocado numa tabela HTML, para eu ler, e nunca esquecer, mantendo o acesso internacional.`}
                 >

@@ -22,8 +22,9 @@ export const popUpItems = [
 
     { name: "caixas", 
       items: [
-        { text: "links", href: "https://matthewjesus7.github.io/html-css/Exercicios/ex020/links.html" },
-        { text: "pseudo-classes", href: "https://matthewjesus7.github.io/" }
+        { text: "caixa01", href: "https://matthewjesus7.github.io/html-css/Exercicios/ex021/caixa01.html" },
+        { text: "caixa02", href: "https://matthewjesus7.github.io/html-css/Exercicios/ex021/caixa02.html" },
+        { text: "caixa03", href: "https://matthewjesus7.github.io/html-css/Exercicios/ex021/caixa03.html" }
     ]},
 
     { name: "fundos", 

@@ -12,7 +12,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 proof="14 de Nov — 2023"
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_2.png')"
                 title="Primeiro Exercicio — Olá Mundo"
                 text={`Meu primeiro exercicio, e contato com a programação!`}
                 >
@@ -26,7 +26,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_3.png')"
                 title="exercicio 2 — parágrafos e quebras de linha"
                 text={`Aprendendo sobre quebras de linha, e entiedades HTML.`}
                 >
@@ -40,7 +40,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_4.png')"
                 title="Aula 3 — Simbolos e Emogis"
                 text={`simbolos especiais, e introdução ao HTML semantico. Lembro-me que aqui, entendi que precisava aprender muito ainda.`}
                 >
@@ -53,7 +53,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_5.png')"
                 title="Aula 4 — C06A01-copyright e creative commons"
                 text={`Direitos autorais, e maneiras de contornar esses problemas com os metodos de pesquisa.`}
                 >
@@ -66,7 +66,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_6.png')"
                 title="Aula 5 — inserindo imagens em HTML5"
                 text={`Formatos de imagens web, tamanho das imagens, e uso adequado para cada uma. também inserção de imagens no HTML e favicons.`}
                 >
@@ -82,7 +82,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_7.png')"
                 title="Aula 6 — Hierarquia de titulos"
                 text={`Aprendendo sobre hierarquia, e entendendo que se trata de SEO, não de estilo, ou enumeração.`}
                 >
@@ -99,7 +99,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_8.png')"
                 title="Aula 7 — Formatção de textos"
                 text={`Aprendendo Semântica, o significado. O HTML5 é semantico, para algo algo visual, deve-se usar CSS. tags morrem.`}
                 >
@@ -113,7 +113,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_9.png')"
                 title="Aula 8 — pincipais formatações"
                 text={`Aula sobre as principais formatações do HTML, e sobre tags obsoletas, e não semanticas.`}
                 >
@@ -132,7 +132,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_10.png')"
                 title="Aula 9 — Código fonte e pré-formatação"
                 text={`Tags que facilitam a leitura de código escrito. Tags de citações simples e completas, abreviações e... tag iversora de texto?`}
                 >
@@ -149,7 +149,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_11.png')"
                 title="Aula 10 — Trabalhando com listas"
                 text={`Listas Ordenadas, Listas não ordenadas e lista de definições.`}
                 >
@@ -166,7 +166,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_12.png')"
                 title="Aula 11 — Trabalhando com Links"
                 text={`Links externos, links internos, e links de download.`}
                 >
@@ -181,7 +181,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_13.png')"
                 title="Aula 13 — Imagens Dinâmicas"
                 text={`Imagens Dinâmicas, sobre a experiência do usuario, SEO, e audio em HTML.`}
                 >
@@ -196,7 +196,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_14.png')"
                 title="Aula 14 — videos em HTML5"
                 text={`Videos, e suas formas mais leves, conversor de video, e recomendação de incorporação.`}
                 >
@@ -211,7 +211,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_15.png')"
                 title="Aula 15 — CSS"
                 text={`Apenas uma Demo que seria copiada e colada posteriormente com CSS`}
                 >
@@ -224,7 +224,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/cores_3.png')"
                 title={`Aula 16 — Cores`}
                 text={`Adição de cores a elementos css, sendo o cor03, a junção de tudo o que eu sabia até ali com HTML e CSS`}
                 >
@@ -240,7 +240,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/fontes_1.png')"
                 title={`Aula 17 — Trabalhando com fontes`}
                 text={`Tamanhos de fonte com CSS`}
                 >
@@ -254,7 +254,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/fontes_2.png')"
                 title={`Aula 18 — Fontes Google e Externas`}
                 text={`Aprendendo a Importar, e usar fontes Google e Externas`}
                 >
@@ -267,7 +267,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_19.png')"
                 title={`Aula 19 — Seletores`}
                 text={`Aprendendo a selecionar um elemento HTML especifico.`}
                 >
@@ -280,7 +280,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_20.png')"
                 title={`Aula 20 — Pseudo-classes`}
                 text={`Aprendendo sobre pseudo-classes e suas possibilidades!`}
                 >
@@ -296,7 +296,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/caixa02.png')"
                 title={`Aula 21 — Caixas`}
                 text={`Itens de caixa, hierarquia de caixas, itens inline.`}
                 >
@@ -313,7 +313,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/fundos_6.png')"
                 title={`Aula 22 — Fundos`}
                 text={`Imagens de fundo com CSS e suas configurações.`}
                 >
@@ -332,7 +332,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/tabelas_5.png')"
                 title={`Aula 23 — Tabelas`}
                 text={`Tabelas em HTML.`}
                 >
@@ -354,7 +354,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/iframes_2.png')"
                 title={`Aula 24 — iframes`}
                 text={`iframes, seus usos, e suas vantagens e desvantagens.`}
                 >
@@ -380,7 +380,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/formularios_3.png')"
                 title={`Aula 25 — formulários`}
                 text={`Formulários, e seus diversos tipos e propriedades.`}
                 >
@@ -421,7 +421,7 @@ const GustavoGuanabara = forwardRef(({ ShowPopUp }, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/media-queries_4.png')"
                 title={`Aula 26 — Media Queries`}
                 text={`Media Queries.`}
                 >

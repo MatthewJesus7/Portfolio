@@ -10,7 +10,7 @@ const Challenges = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_32.png')"
                 title="Desafio 10 — Android"
                 text={`Meu primeiro desafio feito, não havia feito nenhum antes, pois não eram verdadeiros desafios. Esse site envolve um blog sobre o android`}
                 >
@@ -25,7 +25,7 @@ const Challenges = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/desafio12_1.png')"
                 title="Desafio 12 - Cordel"
                 text={`Desafio proposto por gustavo guanabara, um cordel completo, que envolve imagens com efeito paralax e responsividade básica`}
                 >
@@ -40,7 +40,7 @@ const Challenges = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/desafio13_1.png')"
                 title="Desafio 13 - Tabelas"
                 text={`Desafio de montagem de tabelas, que de primeira vista pareciam difícieis, mas, graças as boas aulas, consegui supera-los com muita facilidade.`}
                 >
@@ -53,7 +53,7 @@ const Challenges = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_35.png')"
                 title="Desafio — Redes Sociais"
                 text={`Desafio de redes sociais proposto por gustavo guanabara, não enumerado, mas se trata de iframes e seu uso em prática.`}
                 >
@@ -66,7 +66,7 @@ const Challenges = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_36.png')"
                 title="Desafio — Página de login (Não funcional)"
                 text={`Desafio de uma página de login, "completa" feito primeiramente sozinho por mim, reunindo todo o meu conhecimento em HTML e CSS da época.`}
                 >
@@ -79,7 +79,7 @@ const Challenges = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_37.png')"
                 title="Página de login com guanabara (Não funcional)"
                 text={`Agora, a página dirigida pelo professor gustavo guanabara, com diversos ensinamentos extras, e, com um toque de personalização meu.`}
                 >

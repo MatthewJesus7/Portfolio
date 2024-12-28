@@ -13,7 +13,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 proof="15 de Abril — 2024"
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/nomejs.png')"
                 title="Primeiro Script — Qual o seu nome?"
                 text={`Meu primeiro exercicio aprendendo a linguagem JavaScript!`}
                 >
@@ -26,7 +26,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/olamatheus.png')"
                 title="Aula 06"
                 text={`Ligação entre JavasCript e HTML, com somas, contagens de letras, e toLowerCase e toUpperCase`}
                 >
@@ -42,7 +42,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_40.png')"
                 title="Aula 09 - DOM"
                 text={`Fiz algumas modificações extras, e não estava funcionando, irei manter dessa forma. Mas era algo simples de transformar o botão em vermelho ao clicar com JavaScript.`}
                 >
@@ -56,7 +56,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/aula10js_1.png')"
                 title="Aula 10 - Eventos e Soma"
                 text={`Eventos JavaScript, e Soma através da manipulação de DOM`}
                 >
@@ -72,7 +72,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/aula11js_3.png')"
                 title="Aula 11 - ifs e else"
                 text={`Aulas onde vem ensinar a lógica de sintaxe de if e else.`}
                 >
@@ -90,7 +90,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/aula12js_3.png')"
                 title="Aula 12 - Switch case"
                 text={`Operador menor (<), e maior (>), e Switch case`}
                 >
@@ -107,7 +107,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/aula12exjs_1.png')"
                 title="Aula 12 Exercicios - horario e período"
                 text={`Um script de resposta ao horario, com ifs e else. Não contem as melhores práticas pois eu ainda estava aprendendo.`}
                 >
@@ -122,7 +122,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/aula12excopyjs_1.png')"
                 title="Aula 12 Exercicios - Verificador de idade"
                 text={`Um script que responde de acordo com a data de nascimento, fazendo o cálculo de sua idade, e também seu genero.`}
                 >
@@ -136,7 +136,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_46.png')"
                 title="Aula 13 - while"
                 text={`Aula relativa a loops, começando por while.`}
                 >
@@ -149,7 +149,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_47.png')"
                 title="Aula 14 - for"
                 text={`Loop for em JavaScript, e seu funcionamento.`}
                 >
@@ -162,7 +162,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/aula14ex_1.png')"
                 title="Aula 14 Exercicios - Contador por passo"
                 text={`Utilizando loops, um contador, onde recebe: numero inicial, numero final, e o passo desejado, e traz um resultado visivel na UX.`}
                 >
@@ -177,7 +177,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/aula14ex02_1.png')"
                 title="Aula 14 Exercicios - tabuada"
                 text={`Utilizando loops, uma tabuada de 0 a 10, que pega qualquer número e traz um resultado visivel na UX.`}
                 >
@@ -192,7 +192,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/aula15_2.png')"
                 title="Aula 15 - Arrays"
                 text={`Nesta aula, aprendemos sobre arrays e loops for in, para leitura.`}
                 >
@@ -206,7 +206,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/aula16_1.png')"
                 title="Aula 16 - funções"
                 text={`Nesta aula, aprendemos sobre funções e props que podem ser passadas.`}
                 >
@@ -220,7 +220,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/aula16ex_1.png')"
                 title="Aula 16 Exercicios - Analisador de números"
                 text={`Esse execício se trata de um analisador de numeros, onde se insere nmeros num array, e manupula esses números de diversas maneiras.`}
                 >
@@ -235,7 +235,7 @@ const GuanabaraJS = forwardRef(({showPopUp}, ref) => {
                 type="picture"
                 // proof=""
                 picture="true"
-                backgroundImage="url('')"
+                backgroundImage="url('/Imagens/progress/screenshot_53.png')"
                 title="Aula 17 - Objetos"
                 text={`Na última aula do curso básico, aprendemos o início de objetos JavaScript`}
                 >
