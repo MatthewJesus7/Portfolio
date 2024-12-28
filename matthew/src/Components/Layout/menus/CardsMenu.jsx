@@ -41,7 +41,7 @@ const CardsMenu = forwardRef(({ children, propRef1, propRef2, customclass }, ref
   return (
     <Menu
       id="menu"
-      customclass={`relative z-10 transition-all duration-1000 ease-in-out overflow-hidden rounded-md shadow-lg ${customclass}`}
+      customclass={`menu relative z-10 transition-all duration-1000 ease-in-out overflow-hidden rounded-md shadow-lg ${customclass}`}
       styleOpenMenuAnimating={{ height: maxHeight }}
       styleOpenMenuEndAnimating={{ height: maxHeight }}
       styleCloseMenuAnimating={{ height: "0px" }}

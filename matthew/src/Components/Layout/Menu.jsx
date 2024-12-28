@@ -58,7 +58,7 @@ const Menu = forwardRef(({ children, customclass, style, onMouseLeave,
     }, [setAparecerMenu, onMouseLeave]);
     
     return(
-        <div id={id} className={`overflow-x-hidden ${aparecerMenu ? 'blur-background' : ''} `}>
+        <menu id={id} className={`overflow-x-hidden ${aparecerMenu ? 'blur-background' : ''} `}>
 
         <div className={`overflow-x-hidden`}>
 
@@ -92,7 +92,7 @@ const Menu = forwardRef(({ children, customclass, style, onMouseLeave,
             </div>
             
         </div>
-    </div>
+    </menu>
     );
 });
 
