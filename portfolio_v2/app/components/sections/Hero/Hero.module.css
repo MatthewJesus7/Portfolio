@@ -1,0 +1,162 @@
+/* src/app/components/sections/PortalHero/PortalHero.module.css */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-16) var(--space-4) var(--space-20);
+  position: relative;
+  overflow: hidden;
+  background: var(--background);
+}
+
+.diagramContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1200px;
+  height: 60vh;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.diagram {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: fade-in 1s var(--ease-out) 0.5s forwards;
+}
+
+.diagramPath {
+  stroke: var(--blue-technical);
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  opacity: 0;
+}
+
+.diagramNodes {
+  opacity: 0;
+  animation: fade-in 0.5s var(--ease-out) 1s forwards;
+}
+
+.diagramNode {
+  fill: var(--surface);
+  stroke: var(--blue-technical);
+  opacity: 0;
+}
+
+.diagramLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  fill: var(--text-secondary);
+  opacity: 0;
+  animation: fade-in 0.5s var(--ease-out) 1.5s forwards;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.titleContainer {
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-4xl));
+  line-height: var(--leading-tight);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.titleLine {
+  display: block;
+}
+
+.titleLineHighlight {
+  color: var(--blue-technical);
+  position: relative;
+}
+
+.titleLineHighlight::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red-measurement), transparent);
+  opacity: 0.5;
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin: 0 auto var(--space-12);
+  max-width: 600px;
+  line-height: var(--leading-relaxed);
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  opacity: 1;
+  transition: opacity var(--duration-300) var(--ease-out);
+}
+
+.scrollText {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--gray-500);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--gray-300), transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--blue-technical), transparent);
+  animation: progress-indicator 2s var(--ease-in-out) infinite;
+  transform-origin: top;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-12) var(--space-4) var(--space-16);
+  }
+  
+  .diagramContainer {
+    height: 40vh;
+  }
+  
+  .title {
+    font-size: clamp(var(--text-2xl), 8vw, var(--text-3xl));
+  }
+  
+  .subtitle {
+    font-size: var(--text-base);
+  }
+}

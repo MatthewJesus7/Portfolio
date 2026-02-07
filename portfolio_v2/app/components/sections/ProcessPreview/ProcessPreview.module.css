@@ -1,0 +1,207 @@
+/* src/app/components/sections/PortalProcessPreview/PortalProcessPreview.module.css */
+.preview {
+  padding: var(--space-20) var(--space-4);
+  background: var(--surface);
+  border-top: var(--border-width) solid var(--border-subtle);
+  border-bottom: var(--border-width) solid var(--border-subtle);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.titleNumber {
+  font-family: var(--font-mono);
+  font-size: var(--text-4xl);
+  color: var(--blue-technical);
+  font-weight: 600;
+}
+
+.titleText {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+.stages {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-4);
+  max-width: var(--container-lg);
+  margin: 0 auto var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .stages {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.stage {
+  padding: var(--space-4);
+  border: var(--border-width) solid var(--border-subtle);
+  border-radius: var(--border-radius);
+  background: var(--background);
+  transition: all var(--duration-300) var(--ease-out);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.stage:hover,
+.stage[data-expanded="true"] {
+  border-color: var(--blue-technical);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.stageHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.stageNumber {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--blue-technical);
+  font-weight: 600;
+  min-width: 32px;
+}
+
+.stageTitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.stageContent {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all var(--duration-300) var(--ease-out);
+}
+
+.stage:hover .stageContent,
+.stage[data-expanded="true"] .stageContent {
+  height: auto;
+  opacity: 1;
+  margin-top: var(--space-3);
+}
+
+.stageDescription {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin: 0 0 var(--space-3);
+}
+
+.stageTools {
+  border-top: var(--border-width) solid var(--border-subtle);
+  padding-top: var(--space-3);
+}
+
+.toolsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.toolItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.toolIcon {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--gray-500);
+  transform: rotate(-45deg);
+}
+
+.toolName {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.cta {
+  text-align: center;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--blue-technical);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-width) solid var(--blue-technical);
+  border-radius: var(--border-radius);
+  transition: all var(--duration-200) var(--ease-out);
+}
+
+.ctaLink:hover {
+  background: var(--blue-technical);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.ctaIcon {
+  transition: transform var(--duration-200) var(--ease-out);
+}
+
+.ctaLink:hover .ctaIcon {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .preview {
+    padding: var(--space-12) var(--space-4);
+  }
+  
+  .stages {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .stage {
+    padding: var(--space-3);
+  }
+}
