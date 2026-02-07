@@ -1,0 +1,94 @@
+/* src/app/components/ui/AuraTooltip/AuraTooltip.module.css */
+.container {
+  display: inline-block;
+  position: relative;
+}
+
+.trigger {
+  display: inline-block;
+  cursor: help;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 9999;
+  background: var(--gray-900);
+  color: white;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--border-radius);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  box-shadow: var(--shadow-lg);
+  pointer-events: none;
+  animation: tooltip-fade-in 0.2s var(--ease-out);
+}
+
+@keyframes tooltip-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Arrow */
+.arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--gray-900);
+  transform: rotate(45deg);
+}
+
+.arrow-top {
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.arrow-right {
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.arrow-bottom {
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.arrow-left {
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* Dark mode - tooltip already dark */
+@media (prefers-color-scheme: dark) {
+  .tooltip {
+    background: var(--gray-800);
+    color: var(--gray-100);
+  }
+  
+  .arrow {
+    background: var(--gray-800);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tooltip {
+    max-width: 250px !important;
+    padding: var(--space-2) var(--space-3);
+  }
+}

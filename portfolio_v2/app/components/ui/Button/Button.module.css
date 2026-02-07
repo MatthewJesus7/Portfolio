@@ -1,0 +1,222 @@
+/* src/app/components/ui/AuraButton/AuraButton.module.css */
+.button {
+  --button-padding-y: var(--space-2);
+  --button-padding-x: var(--space-4);
+  --button-font-size: var(--text-sm);
+  --button-icon-size: 16px;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--button-font-size);
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  padding: var(--button-padding-y) var(--button-padding-x);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--duration-200) var(--ease-out);
+  position: relative;
+  text-align: center;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Variants */
+.primary {
+  background: var(--blue-technical);
+  color: white;
+  border-color: var(--blue-technical);
+}
+
+.primary:hover:not(.disabled):not(.loading) {
+  background: #0f2b4d;
+  border-color: #0f2b4d;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--blue-technical);
+  border-color: var(--blue-technical);
+}
+
+.secondary:hover:not(.disabled):not(.loading) {
+  background: rgba(26, 54, 93, 0.1);
+  transform: translateY(-1px);
+}
+
+.text {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: transparent;
+  padding: var(--space-1) var(--space-2);
+}
+
+.text:hover:not(.disabled):not(.loading) {
+  background: var(--gray-100);
+  color: var(--blue-technical);
+}
+
+.outline {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-subtle);
+}
+
+.outline:hover:not(.disabled):not(.loading) {
+  border-color: var(--blue-technical);
+  color: var(--blue-technical);
+}
+
+/* Sizes */
+.sm {
+  --button-padding-y: var(--space-1);
+  --button-padding-x: var(--space-3);
+  --button-font-size: var(--text-xs);
+  --button-icon-size: 14px;
+}
+
+.md {
+  --button-padding-y: var(--space-2);
+  --button-padding-x: var(--space-4);
+  --button-font-size: var(--text-sm);
+  --button-icon-size: 16px;
+}
+
+.lg {
+  --button-padding-y: var(--space-3);
+  --button-padding-x: var(--space-6);
+  --button-font-size: var(--text-base);
+  --button-icon-size: 18px;
+}
+
+/* Density */
+.density-light {
+  letter-spacing: 0.02em;
+}
+
+.density-ideal {
+  letter-spacing: 0.01em;
+}
+
+.density-dense {
+  letter-spacing: 0;
+}
+
+/* States */
+.loading {
+  cursor: wait;
+  opacity: 0.8;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.primary.disabled {
+  background: var(--gray-300);
+  border-color: var(--gray-300);
+  color: var(--gray-500);
+}
+
+/* Focus states */
+.button:focus-visible {
+  outline: 2px solid var(--red-measurement);
+  outline-offset: 2px;
+}
+
+.button:active:not(.disabled):not(.loading) {
+  transform: translateY(0);
+}
+
+/* Full width */
+.fullWidth {
+  width: 100%;
+}
+
+/* Loader */
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: var(--button-icon-size);
+  height: var(--button-icon-size);
+  animation: spin 1s linear infinite;
+}
+
+.spinner circle {
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-dasharray: 80;
+  stroke-dashoffset: 60;
+}
+
+/* Icon */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--button-icon-size);
+  height: var(--button-icon-size);
+}
+
+.iconLeft {
+  margin-right: calc(var(--space-1) * -1);
+}
+
+.iconRight {
+  margin-left: calc(var(--space-1) * -1);
+}
+
+/* Label */
+.label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* Loading state label */
+.loading .label {
+  opacity: 0.7;
+}
+
+/* Button Icon Component */
+.buttonIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .text:hover:not(.disabled):not(.loading) {
+    background: var(--gray-800);
+  }
+  
+  .secondary:hover:not(.disabled):not(.loading) {
+    background: rgba(26, 54, 93, 0.2);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .button {
+    --button-padding-x: var(--space-3);
+  }
+  
+  .lg {
+    --button-padding-y: var(--space-2);
+    --button-padding-x: var(--space-4);
+  }
+}
