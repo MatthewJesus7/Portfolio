@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>— Full Stack Dev</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="module" src="./src/main.js" defer></script>
-<script type="module" src="./src/email.js" defer></script>
-<link rel="stylesheet" href="./src/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Matheus — Full Stack Dev</title>
+  <meta name="description" content="Engenheiro de Software Full Stack. Transição de sistemas legados, arquitetura escalável e engenharia nativa. Intervenções de estado (O¹ para O²).">
+  <meta name="author" content="Matheus">
+  <meta name="theme-color" content="#000000"> <link rel="canonical" href="https://seusite.com.br">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://seusite.com.br">
+  <meta property="og:title" content="Matheus — Full Stack Dev">
+  <meta property="og:description" content="Engenheiro de Software Full Stack. Transição de sistemas legados, arquitetura escalável e engenharia nativa.">
+  <meta property="og:image" content="https://seusite.com.br/og-image.jpg"> <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./src/styles.css">
+  <script src="https://cdn.emailjs.com/dist/email.min.js" defer></script>
+  <script type="module" src="./src/main.js" defer></script>
+  <script type="module" src="./src/email.js" defer></script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Matheus",
+    "jobTitle": "Full Stack Developer",
+    "url": "https://seusite.com.br"
+  }
+  </script>
 </head>
 <body>
 
-<!-- GATE: o site diagnostica o visitante antes de qualquer coisa -->
-<div id="gate">
-  <p class="gate-question">
+<div id="gate" role="dialog" aria-labelledby="gate-title">
+  <p id="gate-title" class="gate-question">
     Qual é o estado atual<br>
     do seu sistema?
   </p>
@@ -40,8 +60,7 @@
   <button class="gate-skip" onclick="dismiss(null)">pular diagnóstico inicial →</button>
 </div>
 
-<!-- NAV flutuante -->
-<nav id="nav">
+<nav id="nav" aria-label="Navegação principal">
   <a href="#transicao" class="nav-item">Casos</a>
   <a href="#processo" class="nav-item">Processo</a>
   <a href="#stack" class="nav-item">Stack</a>
@@ -50,13 +69,11 @@
 
 <main id="main">
 
-<!-- TICKER -->
-<div class="ticker">
+<div class="ticker" aria-hidden="true">
   <div class="ticker-inner" id="ticker"></div>
 </div>
 
-<!-- HERO -->
-<section id="hero">
+<section id="hero" aria-labelledby="heroHeadline">
   <div class="hero-body">
     <div class="hero-left">
       <div class="hero-eyebrow">Full Stack Dev</div>
@@ -68,36 +85,36 @@
       </h1>
 
       <div class="hero-bottom">
-        <div class="hero-name" id="heroName">—</div>
+        <div class="hero-name" id="heroName">Matheus —</div>
         <a href="#transicao" class="hero-cta">Ver intervenções →</a>
       </div>
     </div>
 
-    <div class="hero-right">
+    <div class="hero-right" aria-label="Diagnóstico">
       <div class="diag-label">§ Diagnóstico típico do cliente</div>
 
       <div class="diag-row">
         <div class="diag-state o1">O¹</div>
         <div class="diag-text"><s>"o dev entregou mas não funciona"</s></div>
-        <div class="diag-arrow">→</div>
+        <div class="diag-arrow" aria-hidden="true">→</div>
         <div class="diag-text">arquitetura de responsabilidade mal definida</div>
       </div>
       <div class="diag-row">
         <div class="diag-state o1">O¹</div>
         <div class="diag-text"><s>"preciso reescrever tudo"</s></div>
-        <div class="diag-arrow">→</div>
+        <div class="diag-arrow" aria-hidden="true">→</div>
         <div class="diag-text">na maioria dos casos, não precisa</div>
       </div>
       <div class="diag-row">
         <div class="diag-state o1">O¹</div>
         <div class="diag-text"><s>"meu time não consegue avançar"</s></div>
-        <div class="diag-arrow">→</div>
+        <div class="diag-arrow" aria-hidden="true">→</div>
         <div class="diag-text">acoplamento excessivo disfarçado de complexidade</div>
       </div>
       <div class="diag-row">
         <div class="diag-state o1">O¹</div>
         <div class="diag-text"><s>"ninguém usa o sistema"</s></div>
-        <div class="diag-arrow">→</div>
+        <div class="diag-arrow" aria-hidden="true">→</div>
         <div class="diag-text">complexidade interna exposta ao usuário errado</div>
       </div>
 
@@ -110,16 +127,14 @@
   </div>
 </section>
 
-<!-- TRANSIÇÃO DE ESTADOS — os casos -->
-<section id="transicao">
-  <div class="transicao-header">
+<section id="transicao" aria-label="Casos de Estudo">
+  <div class="transicao-header" aria-hidden="true">
     <div class="transicao-title reveal">ESTADO INICIAL</div>
     <div class="transicao-vs">→</div>
     <div class="transicao-title right reveal d1">ESTADO FINAL</div>
   </div>
 
   <div class="cases-wrapper">
-
     <div class="case-row reveal">
       <div class="case-side problem">
         <div class="case-tag problem-tag">§ O¹ — WordPress Legado</div>
@@ -129,7 +144,7 @@
           <em>Inconsistência visual e técnica (Pixel-Error).</em>
         </div>
       </div>
-      <div class="case-mid">
+      <div class="case-mid" aria-hidden="true">
         <div class="case-mid-arrow">→</div>
       </div>
       <div class="case-side solution">
@@ -145,9 +160,8 @@
       <span class="metric-chip">↓ 100% custo de manutenção</span>
       <span class="metric-chip">↑ Hand-off com Lighthouse 100</span>
       <span class="metric-chip">4 dias de transição</span>
-      <a href="https://sterlingpadloc.wpenginepowered.com/" target="_blank" class="metric-chip link">Ver sistema quebrado ↗</a>
-      <a href="https://sterlingpadlocks.com/" target="_blank" class="metric-chip link">Ver sistema vivo ↗</a>
-      
+      <a href="https://sterlingpadloc.wpenginepowered.com/" target="_blank" rel="noopener noreferrer" class="metric-chip link">Ver sistema quebrado ↗</a>
+      <a href="https://sterlingpadlocks.com/" target="_blank" rel="noopener noreferrer" class="metric-chip link">Ver sistema vivo ↗</a>
     </div>
 
     <div class="case-row reveal">
@@ -159,7 +173,7 @@
           <em>Arquitetura de informação redundante e ineficiente.</em>
         </div>
       </div>
-      <div class="case-mid">
+      <div class="case-mid" aria-hidden="true">
         <div class="case-mid-arrow">→</div>
       </div>
       <div class="case-side solution">
@@ -175,9 +189,8 @@
       <span class="metric-chip">↓ 55% de páginas (ruído)</span>
       <span class="metric-chip">↑ Retenção na jornada</span>
       <span class="metric-chip">Migração automatizada</span>
-      
-       <a href="https://www.townofhortonia.org/" target="_blank" class="metric-chip link">Ver sistema quebrado ↗</a>
-      <a href="http://dev.townofhortonia.afternorth.com/" target="_blank" class="metric-chip link">Ver sistema vivo ↗</a>
+      <a href="https://www.townofhortonia.org/" target="_blank" rel="noopener noreferrer" class="metric-chip link">Ver sistema quebrado ↗</a>
+      <a href="http://dev.townofhortonia.afternorth.com/" target="_blank" rel="noopener noreferrer" class="metric-chip link">Ver sistema vivo ↗</a>
     </div>
 
     <div class="case-row reveal">
@@ -189,7 +202,7 @@
           <em>Risco operacional e alto custo de sustentação.</em>
         </div>
       </div>
-      <div class="case-mid">
+      <div class="case-mid" aria-hidden="true">
         <div class="case-mid-arrow">→</div>
       </div>
       <div class="case-side solution">
@@ -205,14 +218,12 @@
       <span class="metric-chip">↓ 100% código desnecessário</span>
       <span class="metric-chip">↑ Estabilidade em produção</span>
       <span class="metric-chip">Validação real por meses</span>
-      <a href="https://github.com/MatthewJesus7/llm_router" target="_blank" class="metric-chip link">Ver repositório ↗</a>
+      <a href="https://github.com/MatthewJesus7/llm_router" target="_blank" rel="noopener noreferrer" class="metric-chip link">Ver repositório ↗</a>
     </div>
-
   </div>
 </section>
 
-<!-- PROCESSO -->
-<section id="processo">
+<section id="processo" aria-label="Processo de Trabalho">
   <div class="sec-label reveal">Como opero</div>
   <div class="processo-grid">
     <div class="processo-sidebar reveal">
@@ -227,9 +238,9 @@
 
     <div class="processo-steps">
       <div class="step reveal">
-        <div class="step-num">01</div>
+        <div class="step-num" aria-hidden="true">01</div>
         <div class="step-content">
-          <div class="step-title">Diagnóstico <em>de estado</em></div>
+          <h3 class="step-title">Diagnóstico <em>de estado</em></h3>
           <div class="step-body">
             Primeiro, mapeio o estado atual real — não o descrito, o observável.
             Separo sintomas de causas. A maioria dos problemas tem diagnóstico diferente
@@ -240,9 +251,9 @@
       </div>
 
       <div class="step reveal d1">
-        <div class="step-num">02</div>
+        <div class="step-num" aria-hidden="true">02</div>
         <div class="step-content">
-          <div class="step-title">Decisão <em>de intervenção</em></div>
+          <h3 class="step-title">Decisão <em>de intervenção</em></h3>
           <div class="step-body">
             Com diagnóstico em mão, decido a intervenção mínima de maior impacto.
             Nem sempre é reescrever. Frequentemente não é. Mostro o trade-off
@@ -253,9 +264,9 @@
       </div>
 
       <div class="step reveal d2">
-        <div class="step-num">03</div>
+        <div class="step-num" aria-hidden="true">03</div>
         <div class="step-content">
-          <div class="step-title">Execução <em>com visibilidade</em></div>
+          <h3 class="step-title">Execução <em>com visibilidade</em></h3>
           <div class="step-body">
             Você acompanha cada decisão relevante em tempo real. Sem caixas-pretas.
             Se algo mudar no caminho, você sabe antes de me perguntar.
@@ -265,9 +276,9 @@
       </div>
 
       <div class="step reveal d3">
-        <div class="step-num">04</div>
+        <div class="step-num" aria-hidden="true">04</div>
         <div class="step-content">
-          <div class="step-title">Entrega <em>de estado</em></div>
+          <h3 class="step-title">Entrega <em>de estado</em></h3>
           <div class="step-body">
             Não entrego código. Entrego o O² prometido — sistema operável, equipe
             desbloqueada, documentação que sobrevive à minha ausência.
@@ -279,10 +290,9 @@
   </div>
 </section>
 
-<!-- STACK -->
-<section id="stack">
+<section id="stack" aria-labelledby="stackTitle">
   <div class="stack-header reveal">
-    <div class="stack-big-title">STACK</div>
+    <h2 id="stackTitle" class="stack-big-title">STACK</h2>
     <div class="stack-intro">
       Stack não é identidade.<br>
       É escolha contextual.<br><br>
@@ -294,7 +304,7 @@
 
   <div class="stack-map reveal">
     <div class="stack-cell">
-      <div class="stack-cell-label">Interface</div>
+      <h3 class="stack-cell-label">Interface</h3>
       <div class="stack-items">
         <div class="stack-item">React · Next.js</div>
         <div class="stack-item">TypeScript</div>
@@ -304,18 +314,16 @@
       </div>
     </div>
     <div class="stack-cell">
-      <div class="stack-cell-label">Servidor & Dados</div>
+      <h3 class="stack-cell-label">Servidor & Dados</h3>
       <div class="stack-items">
         <div class="stack-item">Node.js · Express</div>
         <div class="stack-item">Python · Flask · FastAPI</div>
-        <!-- <div class="stack-item">PostgreSQL · Redis</div> 
-        <div class="stack-item">Prisma · Drizzle</div> -->
         <div class="stack-item">REST · GraphQL · tRPC</div>
         <div class="stack-item">Docker · CI/CD</div>
       </div>
     </div>
     <div class="stack-cell">
-      <div class="stack-cell-label">Infraestrutura</div>
+      <h3 class="stack-cell-label">Infraestrutura</h3>
       <div class="stack-items">
         <div class="stack-item">AWS · Vercel · Railway</div>
         <div class="stack-item">Monitoramento · Logs</div>
@@ -327,12 +335,11 @@
   </div>
 </section>
 
-<!-- CONTATO -->
-<section id="contato">
+<section id="contato" aria-labelledby="contatoTitle">
   <div class="contato-left">
     <div class="contato-label">§ Contato</div>
 
-    <h2 class="contato-title">
+    <h2 id="contatoTitle" class="contato-title">
       Qual é o<br>seu O¹?
     </h2>
 
@@ -351,27 +358,31 @@
 
 <form id="contact-form" class="contato-right">
   <div class="field-wrap">
-    <label class="field-label">Nome</label>
-    <input name="user_name" class="field-input" type="text" placeholder="Como te chamo?" required>
+    <label class="field-label" for="user_name">Nome</label>
+    <input id="user_name" name="user_name" class="field-input" type="text" placeholder="Como te chamo?" required>
   </div>
   <div class="field-wrap">
-    <label class="field-label">Email</label>
-    <input name="user_email" class="field-input" type="email" placeholder="Onde te respondo" required>
+    <label class="field-label" for="user_email">Email</label>
+    <input id="user_email" name="user_email" class="field-input" type="email" placeholder="Onde te respondo" required>
   </div>
   <div class="field-wrap">
-    <label class="field-label">Descreva o estado atual do seu sistema</label>
-    <textarea name="message" class="field-textarea" placeholder="O que está acontecendo agora? Qual seria o estado ideal? Quanto tempo isso já dura?" required></textarea>
+    <label class="field-label" for="message">Descreva o estado atual do seu sistema</label>
+    <textarea id="message" name="message" class="field-textarea" placeholder="O que está acontecendo agora? Qual seria o estado ideal? Quanto tempo isso já dura?" required></textarea>
   </div>
   <button type="submit" class="contato-send">
     Enviar estado inicial (O¹)
-    <span>→</span>
+    <span aria-hidden="true">→</span>
   </button>
 </form>
 </section>
 
 <footer>
-  <span>Full Stack Dev — 2025</span>
-  <span>github · linkedin · cv</span>
+  <span>Matheus — Full Stack Dev — 2026</span>
+  <div class="footer-links">
+    <a href="https://github.com/MatthewJesus7" target="_blank" rel="noopener noreferrer">github</a> · 
+    <a href="https://www.linkedin.com/in/matheus-costa-b01372205" target="_blank" rel="noopener noreferrer">linkedin</a> · 
+    <!-- <a href="/seu-cv.pdf" target="_blank" rel="noopener noreferrer">cv</a> -->
+  </div>
 </footer>
 
 </main>

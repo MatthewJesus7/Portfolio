@@ -741,6 +741,62 @@ footer span {
   text-transform: uppercase;
 }
 
+.footer-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  color: #5a5550;
+  font-size: 10px;
+}
+
+.footer-links a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint); /* Cinza claro para leitura */
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  position: relative;
+}
+
+/* Efeito de hover seguindo o padrão do site */
+.footer-links a:hover {
+  color: var(--red);
+  transform: translateY(-1px);
+}
+
+/* Opcional: Uma linha sutil que aparece no hover, comum em designs minimalistas */
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--red);
+  transition: width 0.2s ease;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* Ajuste Responsivo para o Footer */
+@media (max-width: 900px) {
+  footer {
+    padding: 40px 28px;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    gap: 12px;
+    justify-content: center;
+  }
+}
+
 nav {
   position: fixed;
   bottom: 32px;
