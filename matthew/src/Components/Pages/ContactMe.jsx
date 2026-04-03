@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-
+ const gate = document.getElementById('gate');
+  const main = document.getElementById('main');
+  
 import BackButton
  from '../Items/Buttons/BackButton';
 

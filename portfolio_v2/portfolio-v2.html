@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>— Full Stack Dev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="module" src="./src/main.js" defer></script>
+<script type="module" src="./src/email.js" defer></script>
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+
+<!-- GATE: o site diagnostica o visitante antes de qualquer coisa -->
+<div id="gate">
+  <p class="gate-question">
+    Qual é o estado atual<br>
+    do seu sistema?
+  </p>
+  <div class="gate-options">
+    <button class="gate-opt" onclick="dismiss('deadline')">
+      Tenho um deadline
+      <span>o sistema existe mas não funciona como deveria</span>
+    </button>
+    <button class="gate-opt" onclick="dismiss('greenfield')">
+      Começo do zero
+      <span>preciso construir algo que ainda não existe</span>
+    </button>
+    <button class="gate-opt" onclick="dismiss('legacy')">
+      Herdei um legado
+      <span>existe código que ninguém quer tocar</span>
+    </button>
+    <button class="gate-opt" onclick="dismiss('scale')">
+      Preciso escalar
+      <span>o que funciona hoje não vai funcionar amanhã</span>
+    </button>
+  </div>
+  <button class="gate-skip" onclick="dismiss(null)">pular diagnóstico inicial →</button>
+</div>
+
+<!-- NAV flutuante -->
+<nav id="nav">
+  <a href="#transicao" class="nav-item">Casos</a>
+  <a href="#processo" class="nav-item">Processo</a>
+  <a href="#stack" class="nav-item">Stack</a>
+  <a href="#contato" class="nav-item">Contato</a>
+</nav>
+
+<main id="main">
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner" id="ticker"></div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-body">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Full Stack Dev</div>
+
+      <h1 class="hero-headline" id="heroHeadline">
+        O problema<br>
+        não é <em>técnico.</em><br>
+        É de <span class="flip">estado.</span>
+      </h1>
+
+      <div class="hero-bottom">
+        <div class="hero-name" id="heroName">—</div>
+        <a href="#transicao" class="hero-cta">Ver intervenções →</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="diag-label">§ Diagnóstico típico do cliente</div>
+
+      <div class="diag-row">
+        <div class="diag-state o1">O¹</div>
+        <div class="diag-text"><s>"o dev entregou mas não funciona"</s></div>
+        <div class="diag-arrow">→</div>
+        <div class="diag-text">arquitetura de responsabilidade mal definida</div>
+      </div>
+      <div class="diag-row">
+        <div class="diag-state o1">O¹</div>
+        <div class="diag-text"><s>"preciso reescrever tudo"</s></div>
+        <div class="diag-arrow">→</div>
+        <div class="diag-text">na maioria dos casos, não precisa</div>
+      </div>
+      <div class="diag-row">
+        <div class="diag-state o1">O¹</div>
+        <div class="diag-text"><s>"meu time não consegue avançar"</s></div>
+        <div class="diag-arrow">→</div>
+        <div class="diag-text">acoplamento excessivo disfarçado de complexidade</div>
+      </div>
+      <div class="diag-row">
+        <div class="diag-state o1">O¹</div>
+        <div class="diag-text"><s>"ninguém usa o sistema"</s></div>
+        <div class="diag-arrow">→</div>
+        <div class="diag-text">complexidade interna exposta ao usuário errado</div>
+      </div>
+
+      <div class="diag-label" style="margin-top:32px;">§ O que de fato muda</div>
+      <div class="diag-row" style="border-bottom:none;">
+        <div class="diag-state o2">O²</div>
+        <div class="diag-text" style="color: var(--green);">sistema operável, equipe desbloqueada, cliente satisfeito</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSIÇÃO DE ESTADOS — os casos -->
+<section id="transicao">
+  <div class="transicao-header">
+    <div class="transicao-title reveal">ESTADO INICIAL</div>
+    <div class="transicao-vs">→</div>
+    <div class="transicao-title right reveal d1">ESTADO FINAL</div>
+  </div>
+
+  <div class="cases-wrapper">
+
+    <div class="case-row reveal">
+      <div class="case-side problem">
+        <div class="case-tag problem-tag">§ O¹ — WordPress Legado</div>
+        <div class="case-text">
+          Dependência de plugins e freelancers.<br>
+          Custos mensais de manutenção recorrente.<br>
+          <em>Inconsistência visual e técnica (Pixel-Error).</em>
+        </div>
+      </div>
+      <div class="case-mid">
+        <div class="case-mid-arrow">→</div>
+      </div>
+      <div class="case-side solution">
+        <div class="case-tag solution-tag">§ O² — Engenharia Nativa</div>
+        <div class="case-text">
+          Reconstrução total (HTML/CSS/JS) em framework proprietário.<br>
+          Eliminação de custos de licenciamento e CMS.<br>
+          <em>Performance otimizada e código 100% controlável.</em>
+        </div>
+      </div>
+    </div>
+    <div class="case-metric-bar">
+      <span class="metric-chip">↓ 100% custo de manutenção</span>
+      <span class="metric-chip">↑ Hand-off com Lighthouse 100</span>
+      <span class="metric-chip">4 dias de transição</span>
+      <a href="https://sterlingpadloc.wpenginepowered.com/" target="_blank" class="metric-chip link">Ver sistema quebrado ↗</a>
+      <a href="https://sterlingpadlocks.com/" target="_blank" class="metric-chip link">Ver sistema vivo ↗</a>
+      
+    </div>
+
+    <div class="case-row reveal">
+      <div class="case-side problem">
+        <div class="case-tag problem-tag">§ O¹ — Dados Descentralizados</div>
+        <div class="case-text">
+          20 páginas fragmentadas em 3 bases distintas.<br>
+          Fricção severa na jornada do usuário.<br>
+          <em>Arquitetura de informação redundante e ineficiente.</em>
+        </div>
+      </div>
+      <div class="case-mid">
+        <div class="case-mid-arrow">→</div>
+      </div>
+      <div class="case-side solution">
+        <div class="case-tag solution-tag">§ O² — Ecossistema Unificado</div>
+        <div class="case-text">
+          Unificação via webscraping e reestruturação de UX.<br>
+          Consolidação estratégica: de 20 para 9 páginas chave.<br>
+          <em>SEO acessível e hierarquia de conteúdo lógica.</em>
+        </div>
+      </div>
+    </div>
+    <div class="case-metric-bar">
+      <span class="metric-chip">↓ 55% de páginas (ruído)</span>
+      <span class="metric-chip">↑ Retenção na jornada</span>
+      <span class="metric-chip">Migração automatizada</span>
+      
+       <a href="https://www.townofhortonia.org/" target="_blank" class="metric-chip link">Ver sistema quebrado ↗</a>
+      <a href="http://dev.townofhortonia.afternorth.com/" target="_blank" class="metric-chip link">Ver sistema vivo ↗</a>
+    </div>
+
+    <div class="case-row reveal">
+      <div class="case-side problem">
+        <div class="case-tag problem-tag">§ O¹ — LLM Router Legado</div>
+        <div class="case-text">
+          Arquitetura overengineered ou libs de alto custo.<br>
+          Latência elevada e falhas constantes em produção.<br>
+          <em>Risco operacional e alto custo de sustentação.</em>
+        </div>
+      </div>
+      <div class="case-mid">
+        <div class="case-mid-arrow">→</div>
+      </div>
+      <div class="case-side solution">
+        <div class="case-tag solution-tag">§ O² — Roteamento Lean</div>
+        <div class="case-text">
+          Implementação de switch simplificado (essential-only).<br>
+          Estabilidade comprovada sob carga real.<br>
+          <em>Complexidade removida; foco em disponibilidade.</em>
+        </div>
+      </div>
+    </div>
+    <div class="case-metric-bar">
+      <span class="metric-chip">↓ 100% código desnecessário</span>
+      <span class="metric-chip">↑ Estabilidade em produção</span>
+      <span class="metric-chip">Validação real por meses</span>
+      <a href="https://github.com/MatthewJesus7/llm_router" target="_blank" class="metric-chip link">Ver repositório ↗</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section id="processo">
+  <div class="sec-label reveal">Como opero</div>
+  <div class="processo-grid">
+    <div class="processo-sidebar reveal">
+      <div class="processo-sidebar-title">Não analiso.<br>Intervenho.</div>
+      <div class="processo-sidebar-body">
+        <p>Análise infinita é procrastinação elegante.<br>
+        Cada etapa abaixo tem um critério de saída claro.<br><br>
+        Se não sei o suficiente para agir,<br>
+        eu te digo antes — não depois.</p>
+      </div>
+    </div>
+
+    <div class="processo-steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <div class="step-title">Diagnóstico <em>de estado</em></div>
+          <div class="step-body">
+            Primeiro, mapeio o estado atual real — não o descrito, o observável.
+            Separo sintomas de causas. A maioria dos problemas tem diagnóstico diferente
+            do que o cliente acredita.
+          </div>
+          <div class="step-formula">O¹ = sistema observado, não sistema descrito</div>
+        </div>
+      </div>
+
+      <div class="step reveal d1">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <div class="step-title">Decisão <em>de intervenção</em></div>
+          <div class="step-body">
+            Com diagnóstico em mão, decido a intervenção mínima de maior impacto.
+            Nem sempre é reescrever. Frequentemente não é. Mostro o trade-off
+            antes de qualquer linha de código.
+          </div>
+          <div class="step-formula">Meio = menor caminho verificável entre O¹ e O²</div>
+        </div>
+      </div>
+
+      <div class="step reveal d2">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <div class="step-title">Execução <em>com visibilidade</em></div>
+          <div class="step-body">
+            Você acompanha cada decisão relevante em tempo real. Sem caixas-pretas.
+            Se algo mudar no caminho, você sabe antes de me perguntar.
+          </div>
+          <div class="step-formula">Execução = intervenção documentada + iteração por evidência</div>
+        </div>
+      </div>
+
+      <div class="step reveal d3">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <div class="step-title">Entrega <em>de estado</em></div>
+          <div class="step-body">
+            Não entrego código. Entrego o O² prometido — sistema operável, equipe
+            desbloqueada, documentação que sobrevive à minha ausência.
+          </div>
+          <div class="step-formula">O² = estado estável, não apenas código funcionando</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack">
+  <div class="stack-header reveal">
+    <div class="stack-big-title">STACK</div>
+    <div class="stack-intro">
+      Stack não é identidade.<br>
+      É escolha contextual.<br><br>
+      Uso o que resolve o problema.<br>
+      Se o seu problema pede algo fora dessa lista,<br>
+      eu te digo <em>antes</em> de começar.
+    </div>
+  </div>
+
+  <div class="stack-map reveal">
+    <div class="stack-cell">
+      <div class="stack-cell-label">Interface</div>
+      <div class="stack-items">
+        <div class="stack-item">React · Next.js</div>
+        <div class="stack-item">TypeScript</div>
+        <div class="stack-item">Tailwind CSS</div>
+        <div class="stack-item">Framer Motion</div>
+        <div class="stack-item">Design Systems</div>
+      </div>
+    </div>
+    <div class="stack-cell">
+      <div class="stack-cell-label">Servidor & Dados</div>
+      <div class="stack-items">
+        <div class="stack-item">Node.js · Express</div>
+        <div class="stack-item">Python · Flask · FastAPI</div>
+        <!-- <div class="stack-item">PostgreSQL · Redis</div> 
+        <div class="stack-item">Prisma · Drizzle</div> -->
+        <div class="stack-item">REST · GraphQL · tRPC</div>
+        <div class="stack-item">Docker · CI/CD</div>
+      </div>
+    </div>
+    <div class="stack-cell">
+      <div class="stack-cell-label">Infraestrutura</div>
+      <div class="stack-items">
+        <div class="stack-item">AWS · Vercel · Railway</div>
+        <div class="stack-item">Monitoramento · Logs</div>
+        <div class="stack-item">Arquitetura de sistema</div>
+        <div class="stack-item">Revisão de código</div>
+        <div class="stack-item">Documentação técnica</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="contato-left">
+    <div class="contato-label">§ Contato</div>
+
+    <h2 class="contato-title">
+      Qual é o<br>seu O¹?
+    </h2>
+
+    <div class="contato-rules">
+      <div class="contato-rule" data-n="01">
+        Não aceito todos os projetos. Aceito os que posso transformar com clareza.
+      </div>
+      <div class="contato-rule" data-n="02">
+        Respondo em até 48h com uma leitura inicial do problema — antes de qualquer proposta.
+      </div>
+      <div class="contato-rule" data-n="03">
+        Se não for o perfil certo para o seu problema, te digo diretamente.
+      </div>
+    </div>
+  </div>
+
+<form id="contact-form" class="contato-right">
+  <div class="field-wrap">
+    <label class="field-label">Nome</label>
+    <input name="user_name" class="field-input" type="text" placeholder="Como te chamo?" required>
+  </div>
+  <div class="field-wrap">
+    <label class="field-label">Email</label>
+    <input name="user_email" class="field-input" type="email" placeholder="Onde te respondo" required>
+  </div>
+  <div class="field-wrap">
+    <label class="field-label">Descreva o estado atual do seu sistema</label>
+    <textarea name="message" class="field-textarea" placeholder="O que está acontecendo agora? Qual seria o estado ideal? Quanto tempo isso já dura?" required></textarea>
+  </div>
+  <button type="submit" class="contato-send">
+    Enviar estado inicial (O¹)
+    <span>→</span>
+  </button>
+</form>
+</section>
+
+<footer>
+  <span>Full Stack Dev — 2025</span>
+  <span>github · linkedin · cv</span>
+</footer>
+
+</main>
+</body>
+</html>
